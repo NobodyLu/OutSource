@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="TypeDTateAffineNoDenomMillerPairingMap" version="3">
+  <DEPS>
+    <ID name="TypeDTateAffineNoDenomMillerPairingMap" mc="Class" uid="d642f692-715f-490c-b3c8-59d64df8faac"/>
+    <FOREIGNID name="JavaClass" mc="Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="TypeDTateAffineNoDenomMillerPairingMap" mc="Class" uid="d642f692-715f-490c-b3c8-59d64df8faac"/>
+    <PID name="d" mc="Package" uid="e0f47850-ed76-430a-a46a-9a1e9acbd710"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[TypeDTateAffineNoDenomMillerPairingMap]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

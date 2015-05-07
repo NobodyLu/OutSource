@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="pairing" version="3">
+  <DEPS>
+    <ID name="pairing" mc="Package" uid="e82a73fe-7e91-43b9-85de-d21cf1cf2ec3"/>
+    <COMPID name="AbstractPairing" mc="Class" uid="3c91883b-e39a-4ee4-ae6d-652852996c13"/>
+    <COMPID name="PairingFactory" mc="Class" uid="98435d9d-5d48-4a09-85c5-259ec95f68d2"/>
+    <COMPID name="a" mc="Package" uid="5980d3d7-b217-410e-b3b2-5ebc80969b2b"/>
+    <COMPID name="a1" mc="Package" uid="3be834a3-c700-49e3-8bf5-57c70bc18551"/>
+    <COMPID name="accumulator" mc="Package" uid="17938975-62ae-4ed9-8b08-e5fa141515b0"/>
+    <COMPID name="d" mc="Package" uid="e0f47850-ed76-430a-a46a-9a1e9acbd710"/>
+    <COMPID name="e" mc="Package" uid="42e5f774-5243-4719-9efa-07f6883a48a2"/>
+    <COMPID name="f" mc="Package" uid="9cb92b5d-d01a-408b-b816-2ff3ab229a85"/>
+    <COMPID name="g" mc="Package" uid="84336a69-e5ff-469b-9715-51010941807a"/>
+    <COMPID name="immutable" mc="Package" uid="5a317d32-1cae-462b-b57d-884993b35fcb"/>
+    <COMPID name="map" mc="Package" uid="e6e7efe7-89d3-40d3-a1ae-fef9f2684c03"/>
+    <COMPID name="parameters" mc="Package" uid="127f1a01-10fb-4a77-84d4-ea247eecee1f"/>
+    <COMPID name="product" mc="Package" uid="28f9d706-c387-4b0c-9684-3543a54a7c89"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="pairing" mc="Package" uid="e82a73fe-7e91-43b9-85de-d21cf1cf2ec3"/>
+    <PID name="jpbc" mc="Package" uid="912cc6c9-db8b-4308-aa03-b66f9c224b3b"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[pairing]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="AbstractPairing" mc="Class" uid="3c91883b-e39a-4ee4-ae6d-652852996c13"/>
+        <COMPID name="PairingFactory" mc="Class" uid="98435d9d-5d48-4a09-85c5-259ec95f68d2"/>
+        <COMPID name="a" mc="Package" uid="5980d3d7-b217-410e-b3b2-5ebc80969b2b"/>
+        <COMPID name="a1" mc="Package" uid="3be834a3-c700-49e3-8bf5-57c70bc18551"/>
+        <COMPID name="accumulator" mc="Package" uid="17938975-62ae-4ed9-8b08-e5fa141515b0"/>
+        <COMPID name="d" mc="Package" uid="e0f47850-ed76-430a-a46a-9a1e9acbd710"/>
+        <COMPID name="e" mc="Package" uid="42e5f774-5243-4719-9efa-07f6883a48a2"/>
+        <COMPID name="f" mc="Package" uid="9cb92b5d-d01a-408b-b816-2ff3ab229a85"/>
+        <COMPID name="g" mc="Package" uid="84336a69-e5ff-469b-9715-51010941807a"/>
+        <COMPID name="immutable" mc="Package" uid="5a317d32-1cae-462b-b57d-884993b35fcb"/>
+        <COMPID name="map" mc="Package" uid="e6e7efe7-89d3-40d3-a1ae-fef9f2684c03"/>
+        <COMPID name="parameters" mc="Package" uid="127f1a01-10fb-4a77-84d4-ea247eecee1f"/>
+        <COMPID name="product" mc="Package" uid="28f9d706-c387-4b0c-9684-3543a54a7c89"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

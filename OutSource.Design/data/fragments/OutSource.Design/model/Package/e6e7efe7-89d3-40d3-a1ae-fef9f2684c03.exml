@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="map" version="3">
+  <DEPS>
+    <ID name="map" mc="Package" uid="e6e7efe7-89d3-40d3-a1ae-fef9f2684c03"/>
+    <COMPID name="AbstractMillerPairingMap" mc="Class" uid="de6f467c-6cf6-4380-9dcd-dd658b3f3859"/>
+    <COMPID name="AbstractMillerPairingPreProcessing" mc="Class" uid="26ce6869-0e34-4080-b4a5-a3e20949b2aa"/>
+    <COMPID name="AbstractPairingMap" mc="Class" uid="4b1ab960-ac5f-4054-b27d-c66dbcdc54d8"/>
+    <COMPID name="DefaultPairingPreProcessing" mc="Class" uid="48da528e-5b1a-4d71-acba-c18cb02e4609"/>
+    <COMPID name="PairingMap" mc="Class" uid="e0e19130-9466-40fb-90e5-79ec800f0dab"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="map" mc="Package" uid="e6e7efe7-89d3-40d3-a1ae-fef9f2684c03"/>
+    <PID name="pairing" mc="Package" uid="e82a73fe-7e91-43b9-85de-d21cf1cf2ec3"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[map]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="AbstractMillerPairingMap" mc="Class" uid="de6f467c-6cf6-4380-9dcd-dd658b3f3859"/>
+        <COMPID name="AbstractMillerPairingPreProcessing" mc="Class" uid="26ce6869-0e34-4080-b4a5-a3e20949b2aa"/>
+        <COMPID name="AbstractPairingMap" mc="Class" uid="4b1ab960-ac5f-4054-b27d-c66dbcdc54d8"/>
+        <COMPID name="DefaultPairingPreProcessing" mc="Class" uid="48da528e-5b1a-4d71-acba-c18cb02e4609"/>
+        <COMPID name="PairingMap" mc="Class" uid="e0e19130-9466-40fb-90e5-79ec800f0dab"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

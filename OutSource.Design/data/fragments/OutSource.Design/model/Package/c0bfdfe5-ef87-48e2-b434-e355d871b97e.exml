@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="recursive" version="3">
+  <DEPS>
+    <ID name="recursive" mc="Package" uid="c0bfdfe5-ef87-48e2-b434-e355d871b97e"/>
+    <COMPID name="RecursiveBigIntegerMultiplier" mc="Class" uid="ad6a0b1c-140d-4d68-bb50-d740dd478d1b"/>
+    <COMPID name="RecursiveMultiplier" mc="Class" uid="1f1e91f2-8f09-4e9c-84b5-11a585daaf1e"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="recursive" mc="Package" uid="c0bfdfe5-ef87-48e2-b434-e355d871b97e"/>
+    <PID name="concurrent" mc="Package" uid="a468a837-7264-4216-85aa-04692a3254c8"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[recursive]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="RecursiveBigIntegerMultiplier" mc="Class" uid="ad6a0b1c-140d-4d68-bb50-d740dd478d1b"/>
+        <COMPID name="RecursiveMultiplier" mc="Class" uid="1f1e91f2-8f09-4e9c-84b5-11a585daaf1e"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

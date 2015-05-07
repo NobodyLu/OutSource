@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="util" version="3">
+  <DEPS>
+    <ID name="util" mc="Package" uid="9e5663db-6041-4d8a-aa84-b72a9208065e"/>
+    <COMPID name="Arrays" mc="Class" uid="b0d67054-c9e0-488b-a9b5-a940327dfb18"/>
+    <COMPID name="ElementUtils" mc="Class" uid="47388051-8edf-4769-a57a-6b7c188a058e"/>
+    <COMPID name="collection" mc="Package" uid="e7d14840-66dc-4120-97a0-6e2d4b5adcd4"/>
+    <COMPID name="concurrent" mc="Package" uid="a468a837-7264-4216-85aa-04692a3254c8"/>
+    <COMPID name="io" mc="Package" uid="15da584e-3e1e-4d1f-a22b-ee980c3f2b8c"/>
+    <COMPID name="math" mc="Package" uid="32a1d8bc-ac79-4fed-a4ea-95ce52d512be"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="util" mc="Package" uid="9e5663db-6041-4d8a-aa84-b72a9208065e"/>
+    <PID name="jpbc" mc="Package" uid="912cc6c9-db8b-4308-aa03-b66f9c224b3b"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[util]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Arrays" mc="Class" uid="b0d67054-c9e0-488b-a9b5-a940327dfb18"/>
+        <COMPID name="ElementUtils" mc="Class" uid="47388051-8edf-4769-a57a-6b7c188a058e"/>
+        <COMPID name="collection" mc="Package" uid="e7d14840-66dc-4120-97a0-6e2d4b5adcd4"/>
+        <COMPID name="concurrent" mc="Package" uid="a468a837-7264-4216-85aa-04692a3254c8"/>
+        <COMPID name="io" mc="Package" uid="15da584e-3e1e-4d1f-a22b-ee980c3f2b8c"/>
+        <COMPID name="math" mc="Package" uid="32a1d8bc-ac79-4fed-a4ea-95ce52d512be"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

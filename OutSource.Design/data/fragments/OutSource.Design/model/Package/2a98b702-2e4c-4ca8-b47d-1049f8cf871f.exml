@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="concurrent" version="3">
+  <DEPS>
+    <ID name="concurrent" mc="Package" uid="2a98b702-2e4c-4ca8-b47d-1049f8cf871f"/>
+    <COMPID name="Callable" mc="Interface" uid="227be420-d082-4cbd-b919-fa8c32a7d816"/>
+    <COMPID name="CompletionService" mc="Class" uid="8a098c4d-e23d-430e-93b8-3d2a046996b3"/>
+    <COMPID name="CountDownLatch" mc="Class" uid="d4d75627-a4fd-43e3-ab56-7731a70ac921"/>
+    <COMPID name="Executor" mc="Class" uid="9c1a38c4-ecd3-412c-9630-b0f2bae6f32d"/>
+    <COMPID name="ExecutorService" mc="Class" uid="251cfa04-4648-4d23-9e07-2b3e1212d0a7"/>
+    <COMPID name="RecursiveTask" mc="Class" uid="0248d5c1-0f5c-423a-a9fe-2f1471c052a8"/>
+    <FOREIGNID name="JavaExtern" mc="TagType" uid="003800a8-0000-0197-0000-000000000000"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="concurrent" mc="Package" uid="2a98b702-2e4c-4ca8-b47d-1049f8cf871f"/>
+    <PID name="util" mc="Package" uid="3a0a1244-23a3-405d-8c0c-66028cd061f7"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[concurrent]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Callable" mc="Interface" uid="227be420-d082-4cbd-b919-fa8c32a7d816"/>
+        <COMPID name="CountDownLatch" mc="Class" uid="d4d75627-a4fd-43e3-ab56-7731a70ac921"/>
+        <COMPID name="RecursiveTask" mc="Class" uid="0248d5c1-0f5c-423a-a9fe-2f1471c052a8"/>
+        <COMPID name="ExecutorService" mc="Class" uid="251cfa04-4648-4d23-9e07-2b3e1212d0a7"/>
+        <COMPID name="CompletionService" mc="Class" uid="8a098c4d-e23d-430e-93b8-3d2a046996b3"/>
+        <COMPID name="Executor" mc="Class" uid="9c1a38c4-ecd3-412c-9630-b0f2bae6f32d"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Tag">
+        <OBJECT>
+          <ID name="" mc="TaggedValue" uid="02c46289-f7a1-4df0-acae-7be069496299"/>
+          <PID name="concurrent" mc="Package" uid="2a98b702-2e4c-4ca8-b47d-1049f8cf871f"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Definition">
+              <FOREIGNID name="JavaExtern" mc="TagType" uid="003800a8-0000-0197-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="field" version="3">
+  <DEPS>
+    <ID name="field" mc="Package" uid="69400371-9818-4a39-aaa5-2cf6fce91997"/>
+    <COMPID name="base" mc="Package" uid="8299c80c-26e1-47ed-81ab-7c2528666f7f"/>
+    <COMPID name="curve" mc="Package" uid="03fd3757-efca-47f8-b388-bd4607207bb8"/>
+    <COMPID name="gt" mc="Package" uid="28c496fe-0e4a-4409-8fc3-b005103b2612"/>
+    <COMPID name="poly" mc="Package" uid="f7b50903-6ae2-4ac7-a7e8-83daed59fe0e"/>
+    <COMPID name="quadratic" mc="Package" uid="d8a5a0b2-1bd2-4e3c-b7c2-e1468ddbfe8d"/>
+    <COMPID name="vector" mc="Package" uid="12324469-3e3e-428c-ae96-279897165563"/>
+    <COMPID name="z" mc="Package" uid="d5f1c5fc-fa46-44e0-87c6-ecb3c42a4b9f"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="field" mc="Package" uid="69400371-9818-4a39-aaa5-2cf6fce91997"/>
+    <PID name="jpbc" mc="Package" uid="912cc6c9-db8b-4308-aa03-b66f9c224b3b"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[field]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="base" mc="Package" uid="8299c80c-26e1-47ed-81ab-7c2528666f7f"/>
+        <COMPID name="curve" mc="Package" uid="03fd3757-efca-47f8-b388-bd4607207bb8"/>
+        <COMPID name="gt" mc="Package" uid="28c496fe-0e4a-4409-8fc3-b005103b2612"/>
+        <COMPID name="poly" mc="Package" uid="f7b50903-6ae2-4ac7-a7e8-83daed59fe0e"/>
+        <COMPID name="quadratic" mc="Package" uid="d8a5a0b2-1bd2-4e3c-b7c2-e1468ddbfe8d"/>
+        <COMPID name="vector" mc="Package" uid="12324469-3e3e-428c-ae96-279897165563"/>
+        <COMPID name="z" mc="Package" uid="d5f1c5fc-fa46-44e0-87c6-ecb3c42a4b9f"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

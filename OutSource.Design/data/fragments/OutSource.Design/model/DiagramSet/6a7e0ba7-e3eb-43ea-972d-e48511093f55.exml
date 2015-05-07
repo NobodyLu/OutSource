@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="OutSource.Design" version="3">
+  <DEPS>
+    <ID name="OutSource.Design" mc="DiagramSet" uid="6a7e0ba7-e3eb-43ea-972d-e48511093f55"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="OutSource.Design" mc="DiagramSet" uid="6a7e0ba7-e3eb-43ea-972d-e48511093f55"/>
+    <PID name="OutSource.Design" mc="Project" uid="269c5101-8f8e-4c35-b08b-0d5ec9a6603b"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[OutSource.Design]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

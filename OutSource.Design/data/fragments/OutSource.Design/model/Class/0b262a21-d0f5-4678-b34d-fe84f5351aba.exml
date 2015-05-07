@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="ImmutableDegreeTwoExtensionQuadraticElement" version="3">
+  <DEPS>
+    <ID name="ImmutableDegreeTwoExtensionQuadraticElement" mc="Class" uid="0b262a21-d0f5-4678-b34d-fe84f5351aba"/>
+    <FOREIGNID name="JavaClass" mc="Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="ImmutableDegreeTwoExtensionQuadraticElement" mc="Class" uid="0b262a21-d0f5-4678-b34d-fe84f5351aba"/>
+    <PID name="quadratic" mc="Package" uid="d8a5a0b2-1bd2-4e3c-b7c2-e1468ddbfe8d"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[ImmutableDegreeTwoExtensionQuadraticElement]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

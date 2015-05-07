@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="OutSource.Design" version="3">
+  <DEPS>
+    <ID name="OutSource.Design" mc="AnalystProject" uid="12b78f15-e8f0-448c-bf29-2e2d1382e562"/>
+    <COMPID name="OutSource.Design" mc="PropertyContainer" uid="ad940804-88fb-4a37-8029-2c825c1a6780"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="OutSource.Design" mc="AnalystProject" uid="12b78f15-e8f0-448c-bf29-2e2d1382e562"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[OutSource.Design]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="PropertyRoot">
+        <COMPID name="OutSource.Design" mc="PropertyContainer" uid="ad940804-88fb-4a37-8029-2c825c1a6780"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

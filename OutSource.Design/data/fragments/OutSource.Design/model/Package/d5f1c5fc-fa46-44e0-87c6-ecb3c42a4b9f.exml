@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="z" version="3">
+  <DEPS>
+    <ID name="z" mc="Package" uid="d5f1c5fc-fa46-44e0-87c6-ecb3c42a4b9f"/>
+    <COMPID name="AbstractZElement" mc="Class" uid="7b74bdbc-c153-4ff3-9be6-e4f542ca2606"/>
+    <COMPID name="ImmutableZrElement" mc="Class" uid="a2202e56-0e9d-4e2a-9767-0499187514da"/>
+    <COMPID name="SymmetricZrElement" mc="Class" uid="9225910e-dce5-48b4-8e26-294e45e5643e"/>
+    <COMPID name="SymmetricZrField" mc="Class" uid="91d30ac8-cd1b-4336-b591-367c5cc2dd23"/>
+    <COMPID name="ZElement" mc="Class" uid="63f77a12-0427-4c10-873c-d8927184db37"/>
+    <COMPID name="ZField" mc="Class" uid="10f7362d-8f4f-4a39-84f7-3d1049108730"/>
+    <COMPID name="ZrElement" mc="Class" uid="bc7f214b-7432-4f1c-a6bf-8d982055ec60"/>
+    <COMPID name="ZrField" mc="Class" uid="e7d6b1fe-f73c-4a2b-8658-42df61ab0c57"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="z" mc="Package" uid="d5f1c5fc-fa46-44e0-87c6-ecb3c42a4b9f"/>
+    <PID name="field" mc="Package" uid="69400371-9818-4a39-aaa5-2cf6fce91997"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[z]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="AbstractZElement" mc="Class" uid="7b74bdbc-c153-4ff3-9be6-e4f542ca2606"/>
+        <COMPID name="ImmutableZrElement" mc="Class" uid="a2202e56-0e9d-4e2a-9767-0499187514da"/>
+        <COMPID name="SymmetricZrElement" mc="Class" uid="9225910e-dce5-48b4-8e26-294e45e5643e"/>
+        <COMPID name="SymmetricZrField" mc="Class" uid="91d30ac8-cd1b-4336-b591-367c5cc2dd23"/>
+        <COMPID name="ZElement" mc="Class" uid="63f77a12-0427-4c10-873c-d8927184db37"/>
+        <COMPID name="ZField" mc="Class" uid="10f7362d-8f4f-4a39-84f7-3d1049108730"/>
+        <COMPID name="ZrElement" mc="Class" uid="bc7f214b-7432-4f1c-a6bf-8d982055ec60"/>
+        <COMPID name="ZrField" mc="Class" uid="e7d6b1fe-f73c-4a2b-8658-42df61ab0c57"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

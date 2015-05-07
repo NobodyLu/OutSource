@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="vector" version="3">
+  <DEPS>
+    <ID name="vector" mc="Package" uid="12324469-3e3e-428c-ae96-279897165563"/>
+    <COMPID name="ImmutableVectorElement" mc="Class" uid="2debe75f-6128-417a-9884-448b282682d6"/>
+    <COMPID name="VectorElement" mc="Class" uid="f4d00cd0-4a6c-4b40-adf2-d5f169874cf0"/>
+    <COMPID name="VectorElementPowPreProcessing" mc="Class" uid="bf7ff02a-bcd0-4f40-8858-b999df2684aa"/>
+    <COMPID name="VectorField" mc="Class" uid="950954be-a7b3-4e39-a30e-b5bcd650d48c"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="vector" mc="Package" uid="12324469-3e3e-428c-ae96-279897165563"/>
+    <PID name="field" mc="Package" uid="69400371-9818-4a39-aaa5-2cf6fce91997"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[vector]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="ImmutableVectorElement" mc="Class" uid="2debe75f-6128-417a-9884-448b282682d6"/>
+        <COMPID name="VectorElement" mc="Class" uid="f4d00cd0-4a6c-4b40-adf2-d5f169874cf0"/>
+        <COMPID name="VectorElementPowPreProcessing" mc="Class" uid="bf7ff02a-bcd0-4f40-8858-b999df2684aa"/>
+        <COMPID name="VectorField" mc="Class" uid="950954be-a7b3-4e39-a30e-b5bcd650d48c"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

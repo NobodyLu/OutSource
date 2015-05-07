@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="quadratic" version="3">
+  <DEPS>
+    <ID name="quadratic" mc="Package" uid="d8a5a0b2-1bd2-4e3c-b7c2-e1468ddbfe8d"/>
+    <COMPID name="DegreeTwoExtensionQuadraticElement" mc="Class" uid="91b95cd3-d9fe-46ea-b91d-9eaf90d914b7"/>
+    <COMPID name="DegreeTwoExtensionQuadraticField" mc="Class" uid="4e8e99ab-f138-44fa-8556-6f5e2b4b9dd0"/>
+    <COMPID name="ImmutableDegreeTwoExtensionQuadraticElement" mc="Class" uid="0b262a21-d0f5-4678-b34d-fe84f5351aba"/>
+    <COMPID name="ImmutableQuadraticElement" mc="Class" uid="d55bffc4-e211-419e-83aa-a071a820aaad"/>
+    <COMPID name="QuadraticElement" mc="Class" uid="2fd127b9-2c99-43b4-802b-04496c1eccb3"/>
+    <COMPID name="QuadraticField" mc="Class" uid="5a064dd1-a3dc-4611-969b-ae7e45a7fcf4"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="quadratic" mc="Package" uid="d8a5a0b2-1bd2-4e3c-b7c2-e1468ddbfe8d"/>
+    <PID name="field" mc="Package" uid="69400371-9818-4a39-aaa5-2cf6fce91997"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[quadratic]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="DegreeTwoExtensionQuadraticElement" mc="Class" uid="91b95cd3-d9fe-46ea-b91d-9eaf90d914b7"/>
+        <COMPID name="DegreeTwoExtensionQuadraticField" mc="Class" uid="4e8e99ab-f138-44fa-8556-6f5e2b4b9dd0"/>
+        <COMPID name="ImmutableDegreeTwoExtensionQuadraticElement" mc="Class" uid="0b262a21-d0f5-4678-b34d-fe84f5351aba"/>
+        <COMPID name="ImmutableQuadraticElement" mc="Class" uid="d55bffc4-e211-419e-83aa-a071a820aaad"/>
+        <COMPID name="QuadraticElement" mc="Class" uid="2fd127b9-2c99-43b4-802b-04496c1eccb3"/>
+        <COMPID name="QuadraticField" mc="Class" uid="5a064dd1-a3dc-4611-969b-ae7e45a7fcf4"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

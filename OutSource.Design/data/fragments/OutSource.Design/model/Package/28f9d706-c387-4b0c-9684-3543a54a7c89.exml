@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="product" version="3">
+  <DEPS>
+    <ID name="product" mc="Package" uid="28f9d706-c387-4b0c-9684-3543a54a7c89"/>
+    <COMPID name="ProductPairing" mc="Class" uid="1c0019e7-467a-4766-9b19-3d83aa7f609b"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="product" mc="Package" uid="28f9d706-c387-4b0c-9684-3543a54a7c89"/>
+    <PID name="pairing" mc="Package" uid="e82a73fe-7e91-43b9-85de-d21cf1cf2ec3"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[product]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="ProductPairing" mc="Class" uid="1c0019e7-467a-4766-9b19-3d83aa7f609b"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

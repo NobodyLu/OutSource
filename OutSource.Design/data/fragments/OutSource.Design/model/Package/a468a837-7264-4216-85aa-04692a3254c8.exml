@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="concurrent" version="3">
+  <DEPS>
+    <ID name="concurrent" mc="Package" uid="a468a837-7264-4216-85aa-04692a3254c8"/>
+    <COMPID name="ExecutorServiceUtils" mc="Class" uid="d7f120c6-539a-47a0-b719-05ea5e2bbbb9"/>
+    <COMPID name="Pool" mc="Interface" uid="b39da739-0e6a-489a-b943-615d548ebd7f"/>
+    <COMPID name="PoolExecutor" mc="Class" uid="bf85bbcb-1ced-4f11-b0d5-01874841ed03"/>
+    <COMPID name="accumultor" mc="Package" uid="51d4f1a2-b587-40b7-8060-b57b2410dc70"/>
+    <COMPID name="context" mc="Package" uid="b393b320-619f-4f74-94df-7879e80aa8f5"/>
+    <COMPID name="recursive" mc="Package" uid="c0bfdfe5-ef87-48e2-b434-e355d871b97e"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="concurrent" mc="Package" uid="a468a837-7264-4216-85aa-04692a3254c8"/>
+    <PID name="util" mc="Package" uid="9e5663db-6041-4d8a-aa84-b72a9208065e"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[concurrent]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="ExecutorServiceUtils" mc="Class" uid="d7f120c6-539a-47a0-b719-05ea5e2bbbb9"/>
+        <COMPID name="Pool" mc="Interface" uid="b39da739-0e6a-489a-b943-615d548ebd7f"/>
+        <COMPID name="PoolExecutor" mc="Class" uid="bf85bbcb-1ced-4f11-b0d5-01874841ed03"/>
+        <COMPID name="accumultor" mc="Package" uid="51d4f1a2-b587-40b7-8060-b57b2410dc70"/>
+        <COMPID name="context" mc="Package" uid="b393b320-619f-4f74-94df-7879e80aa8f5"/>
+        <COMPID name="recursive" mc="Package" uid="c0bfdfe5-ef87-48e2-b434-e355d871b97e"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

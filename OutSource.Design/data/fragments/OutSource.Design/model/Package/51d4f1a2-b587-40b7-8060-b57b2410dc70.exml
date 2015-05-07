@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="accumultor" version="3">
+  <DEPS>
+    <ID name="accumultor" mc="Package" uid="51d4f1a2-b587-40b7-8060-b57b2410dc70"/>
+    <COMPID name="AbstractAccumulator" mc="Class" uid="30f57199-f3d8-466c-8883-0c1150cee66d"/>
+    <COMPID name="Accumulator" mc="Interface" uid="5ce64f68-8242-4820-881f-d38822de2d80"/>
+    <COMPID name="BigIntegerAddAccumulator" mc="Class" uid="11c54e50-d555-4bfa-ad0c-7208fe1a1531"/>
+    <COMPID name="BigIntegerAddModAccumulator" mc="Class" uid="1d747f41-9cb8-4045-9fe0-3496595e6764"/>
+    <COMPID name="BigIntegerMulAccumulator" mc="Class" uid="ce6d5057-0508-4489-9d40-f80d6e73d60b"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="accumultor" mc="Package" uid="51d4f1a2-b587-40b7-8060-b57b2410dc70"/>
+    <PID name="concurrent" mc="Package" uid="a468a837-7264-4216-85aa-04692a3254c8"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[accumultor]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="AbstractAccumulator" mc="Class" uid="30f57199-f3d8-466c-8883-0c1150cee66d"/>
+        <COMPID name="Accumulator" mc="Interface" uid="5ce64f68-8242-4820-881f-d38822de2d80"/>
+        <COMPID name="BigIntegerAddAccumulator" mc="Class" uid="11c54e50-d555-4bfa-ad0c-7208fe1a1531"/>
+        <COMPID name="BigIntegerAddModAccumulator" mc="Class" uid="1d747f41-9cb8-4045-9fe0-3496595e6764"/>
+        <COMPID name="BigIntegerMulAccumulator" mc="Class" uid="ce6d5057-0508-4489-9d40-f80d6e73d60b"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="jpbc" version="3">
+  <DEPS>
+    <ID name="jpbc" mc="Package" uid="84c90a8a-acfa-44eb-bdba-662fcd38e618"/>
+    <COMPID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+    <COMPID name="ElementPow" mc="Interface" uid="d211e388-2f01-4b41-a6c9-117386521218"/>
+    <COMPID name="ElementPowPreProcessing" mc="Interface" uid="62c9c7c8-67b2-4246-a963-46bdbf27ef91"/>
+    <COMPID name="Field" mc="Interface" uid="42c7a964-8474-40cf-8b20-9233783caaef"/>
+    <COMPID name="FieldOver" mc="Interface" uid="ba1b0f79-8c44-4ee1-b78e-a9d63f4eb94c"/>
+    <COMPID name="Pairing" mc="Interface" uid="5b3ac860-7a14-4870-8f78-7cb5d423cc81"/>
+    <COMPID name="PairingParameters" mc="Interface" uid="e9089d66-064d-4b75-91ca-a3b1002b450b"/>
+    <COMPID name="PairingParametersGenerator" mc="Interface" uid="a918511d-7553-46e1-981f-72edd6238524"/>
+    <COMPID name="PairingPreProcessing" mc="Interface" uid="d330e3b3-2761-4ecf-b683-7a4b136d01b8"/>
+    <COMPID name="Point" mc="Interface" uid="c0dd4c3c-d604-44f5-a1dd-ae74fefe521c"/>
+    <COMPID name="Polynomial" mc="Interface" uid="1049dc6e-839a-4b30-b2ae-1ec42797410b"/>
+    <COMPID name="PreProcessing" mc="Interface" uid="8ed45298-381a-45ae-8499-763a50921ab9"/>
+    <COMPID name="Vector" mc="Interface" uid="b3bf37b8-3f0b-421c-b082-7ed9852283ce"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="jpbc" mc="Package" uid="84c90a8a-acfa-44eb-bdba-662fcd38e618"/>
+    <PID name="gas" mc="Package" uid="95763511-8501-468f-847c-811b673b5351"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[jpbc]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+        <COMPID name="ElementPow" mc="Interface" uid="d211e388-2f01-4b41-a6c9-117386521218"/>
+        <COMPID name="ElementPowPreProcessing" mc="Interface" uid="62c9c7c8-67b2-4246-a963-46bdbf27ef91"/>
+        <COMPID name="Field" mc="Interface" uid="42c7a964-8474-40cf-8b20-9233783caaef"/>
+        <COMPID name="FieldOver" mc="Interface" uid="ba1b0f79-8c44-4ee1-b78e-a9d63f4eb94c"/>
+        <COMPID name="Pairing" mc="Interface" uid="5b3ac860-7a14-4870-8f78-7cb5d423cc81"/>
+        <COMPID name="PairingParameters" mc="Interface" uid="e9089d66-064d-4b75-91ca-a3b1002b450b"/>
+        <COMPID name="PairingParametersGenerator" mc="Interface" uid="a918511d-7553-46e1-981f-72edd6238524"/>
+        <COMPID name="PairingPreProcessing" mc="Interface" uid="d330e3b3-2761-4ecf-b683-7a4b136d01b8"/>
+        <COMPID name="Point" mc="Interface" uid="c0dd4c3c-d604-44f5-a1dd-ae74fefe521c"/>
+        <COMPID name="Polynomial" mc="Interface" uid="1049dc6e-839a-4b30-b2ae-1ec42797410b"/>
+        <COMPID name="PreProcessing" mc="Interface" uid="8ed45298-381a-45ae-8499-763a50921ab9"/>
+        <COMPID name="Vector" mc="Interface" uid="b3bf37b8-3f0b-421c-b082-7ed9852283ce"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

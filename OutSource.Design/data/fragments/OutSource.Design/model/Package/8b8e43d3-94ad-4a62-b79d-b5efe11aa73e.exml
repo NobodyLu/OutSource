@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="outsource" version="3">
+  <DEPS>
+    <ID name="outsource" mc="Package" uid="8b8e43d3-94ad-4a62-b79d-b5efe11aa73e"/>
+    <COMPID name="EntityRuntime" mc="Class" uid="699839da-ca91-4e26-b904-d5a4e6824a7f"/>
+    <COMPID name="Outsource" mc="Class" uid="846d6945-babc-49e9-abee-fc45f03178c4"/>
+    <COMPID name="OutsourceClassDiagram" mc="ClassDiagram" uid="8f88e7f5-6e33-45cc-9b49-2eaad4be9898"/>
+    <COMPID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
+    <COMPID name="pairing" mc="Package" uid="06602361-aa5a-4e51-8410-e1b130b34878"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="outsource" mc="Package" uid="8b8e43d3-94ad-4a62-b79d-b5efe11aa73e"/>
+    <PID name="loccs" mc="Package" uid="4fe8c23b-9957-4be3-82b3-bf2c6d0caf7e"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[outsource]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="pairing" mc="Package" uid="06602361-aa5a-4e51-8410-e1b130b34878"/>
+        <COMPID name="EntityRuntime" mc="Class" uid="699839da-ca91-4e26-b904-d5a4e6824a7f"/>
+        <COMPID name="Outsource" mc="Class" uid="846d6945-babc-49e9-abee-fc45f03178c4"/>
+        <COMPID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Product">
+        <COMPID name="OutsourceClassDiagram" mc="ClassDiagram" uid="8f88e7f5-6e33-45cc-9b49-2eaad4be9898"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

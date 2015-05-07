@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="io" version="3">
+  <DEPS>
+    <ID name="io" mc="Package" uid="8a0d82a8-57c7-4052-94fa-b2ecfd018404"/>
+    <COMPID name="ByteArrayInputStream" mc="Class" uid="097c1edd-9d17-45f0-9f4b-1e8272d661fa"/>
+    <COMPID name="DataInput" mc="Interface" uid="a9c4ac47-a087-4c5f-a5e0-205dd1573d5f"/>
+    <COMPID name="DataOutput" mc="Interface" uid="dab8e5e8-10db-4b1f-81e8-a3d1d887aa79"/>
+    <COMPID name="FilterInputStream" mc="Class" uid="539552f8-2ece-4b3b-a3cb-7c8757c994bd"/>
+    <COMPID name="FilterOutputStream" mc="Class" uid="ded340b8-bf61-440d-a0c8-be110ab81998"/>
+    <COMPID name="IOException" mc="Class" uid="6264042e-970a-46c0-9691-5bc64306acae"/>
+    <COMPID name="InputStream" mc="Class" uid="b5437265-c939-41fa-be21-56399bf61d1f"/>
+    <COMPID name="OutputStream" mc="Class" uid="dc9ed0ea-f41e-469d-a327-6c1b0f84775a"/>
+    <COMPID name="Serializable" mc="Interface" uid="c8263867-da14-4822-a6d2-4476f57b0552"/>
+    <FOREIGNID name="JavaExtern" mc="TagType" uid="003800a8-0000-0197-0000-000000000000"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="io" mc="Package" uid="8a0d82a8-57c7-4052-94fa-b2ecfd018404"/>
+    <PID name="java" mc="Package" uid="a052eb75-e3ec-4eca-895e-48c8d8324e48"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[io]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="DataInput" mc="Interface" uid="a9c4ac47-a087-4c5f-a5e0-205dd1573d5f"/>
+        <COMPID name="DataOutput" mc="Interface" uid="dab8e5e8-10db-4b1f-81e8-a3d1d887aa79"/>
+        <COMPID name="IOException" mc="Class" uid="6264042e-970a-46c0-9691-5bc64306acae"/>
+        <COMPID name="FilterOutputStream" mc="Class" uid="ded340b8-bf61-440d-a0c8-be110ab81998"/>
+        <COMPID name="FilterInputStream" mc="Class" uid="539552f8-2ece-4b3b-a3cb-7c8757c994bd"/>
+        <COMPID name="ByteArrayInputStream" mc="Class" uid="097c1edd-9d17-45f0-9f4b-1e8272d661fa"/>
+        <COMPID name="OutputStream" mc="Class" uid="dc9ed0ea-f41e-469d-a327-6c1b0f84775a"/>
+        <COMPID name="InputStream" mc="Class" uid="b5437265-c939-41fa-be21-56399bf61d1f"/>
+        <COMPID name="Serializable" mc="Interface" uid="c8263867-da14-4822-a6d2-4476f57b0552"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Tag">
+        <OBJECT>
+          <ID name="" mc="TaggedValue" uid="4745872c-c17c-4085-95ad-245d3df99c27"/>
+          <PID name="io" mc="Package" uid="8a0d82a8-57c7-4052-94fa-b2ecfd018404"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Definition">
+              <FOREIGNID name="JavaExtern" mc="TagType" uid="003800a8-0000-0197-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

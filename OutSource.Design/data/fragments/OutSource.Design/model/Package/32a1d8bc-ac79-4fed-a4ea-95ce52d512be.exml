@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="math" version="3">
+  <DEPS>
+    <ID name="math" mc="Package" uid="32a1d8bc-ac79-4fed-a4ea-95ce52d512be"/>
+    <COMPID name="BigIntegerUtils" mc="Class" uid="1c2558e7-c07f-4258-a71a-d4013352ea25"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="math" mc="Package" uid="32a1d8bc-ac79-4fed-a4ea-95ce52d512be"/>
+    <PID name="util" mc="Package" uid="9e5663db-6041-4d8a-aa84-b72a9208065e"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[math]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="BigIntegerUtils" mc="Class" uid="1c2558e7-c07f-4258-a71a-d4013352ea25"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

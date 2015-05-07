@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="pairing" version="3">
+  <DEPS>
+    <ID name="pairing" mc="Package" uid="06602361-aa5a-4e51-8410-e1b130b34878"/>
+    <COMPID name="PairingClassDiagram" mc="ClassDiagram" uid="0f55d7a2-2fc9-4ee5-92ad-b9752d6bdef3"/>
+    <COMPID name="PairingOutsource" mc="Class" uid="b53458c4-9a4f-4317-86e7-861001d4e637"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="pairing" mc="Package" uid="06602361-aa5a-4e51-8410-e1b130b34878"/>
+    <PID name="outsource" mc="Package" uid="8b8e43d3-94ad-4a62-b79d-b5efe11aa73e"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[pairing]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="PairingOutsource" mc="Class" uid="b53458c4-9a4f-4317-86e7-861001d4e637"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Product">
+        <COMPID name="PairingClassDiagram" mc="ClassDiagram" uid="0f55d7a2-2fc9-4ee5-92ad-b9752d6bdef3"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

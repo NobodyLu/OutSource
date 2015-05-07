@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="disk" version="3">
+  <DEPS>
+    <ID name="disk" mc="Package" uid="eb4b9211-05bb-4428-936c-51b63e5b80dc"/>
+    <COMPID name="ArraySector" mc="Interface" uid="f67628b8-284c-4d57-82c5-7a6d26d82c63"/>
+    <COMPID name="ByteBufferBigIntegerArraySector" mc="Class" uid="a90facd0-1a63-451f-b78c-134f972bf9f5"/>
+    <COMPID name="ByteBufferLatchSoftRefBigIntegerArraySector" mc="Class" uid="00052faf-d3d7-4e92-9180-440dd926ae61"/>
+    <COMPID name="ByteBufferSoftRefBigIntegerArraySector" mc="Class" uid="a9400e7e-bcfe-4b6f-895c-53f04bcc7882"/>
+    <COMPID name="Disk" mc="Interface" uid="cfbc8945-9a9e-4ea1-a85d-b99e11b3cbe0"/>
+    <COMPID name="FileChannelDisk" mc="Class" uid="09af59b3-f378-4c2f-823a-8d775a215d4d"/>
+    <COMPID name="Sector" mc="Interface" uid="4a619f03-894e-4308-af91-e4ee726fe2fa"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="disk" mc="Package" uid="eb4b9211-05bb-4428-936c-51b63e5b80dc"/>
+    <PID name="io" mc="Package" uid="15da584e-3e1e-4d1f-a22b-ee980c3f2b8c"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[disk]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="ArraySector" mc="Interface" uid="f67628b8-284c-4d57-82c5-7a6d26d82c63"/>
+        <COMPID name="ByteBufferBigIntegerArraySector" mc="Class" uid="a90facd0-1a63-451f-b78c-134f972bf9f5"/>
+        <COMPID name="ByteBufferLatchSoftRefBigIntegerArraySector" mc="Class" uid="00052faf-d3d7-4e92-9180-440dd926ae61"/>
+        <COMPID name="ByteBufferSoftRefBigIntegerArraySector" mc="Class" uid="a9400e7e-bcfe-4b6f-895c-53f04bcc7882"/>
+        <COMPID name="Disk" mc="Interface" uid="cfbc8945-9a9e-4ea1-a85d-b99e11b3cbe0"/>
+        <COMPID name="FileChannelDisk" mc="Class" uid="09af59b3-f378-4c2f-823a-8d775a215d4d"/>
+        <COMPID name="Sector" mc="Interface" uid="4a619f03-894e-4308-af91-e4ee726fe2fa"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

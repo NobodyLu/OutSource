@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="f" version="3">
+  <DEPS>
+    <ID name="f" mc="Package" uid="9cb92b5d-d01a-408b-b816-2ff3ab229a85"/>
+    <COMPID name="TypeFCurveGenerator" mc="Class" uid="8f95aba0-6a8d-440f-bb38-d02653f93946"/>
+    <COMPID name="TypeFPairing" mc="Class" uid="3cdcde01-bbd7-47f9-be84-c881d63ad4c9"/>
+    <COMPID name="TypeFTateNoDenomMillerPairingMap" mc="Class" uid="27fc179d-de7d-46d6-b4c9-8b89e247b320"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="f" mc="Package" uid="9cb92b5d-d01a-408b-b816-2ff3ab229a85"/>
+    <PID name="pairing" mc="Package" uid="e82a73fe-7e91-43b9-85de-d21cf1cf2ec3"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[f]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="TypeFCurveGenerator" mc="Class" uid="8f95aba0-6a8d-440f-bb38-d02653f93946"/>
+        <COMPID name="TypeFPairing" mc="Class" uid="3cdcde01-bbd7-47f9-be84-c881d63ad4c9"/>
+        <COMPID name="TypeFTateNoDenomMillerPairingMap" mc="Class" uid="27fc179d-de7d-46d6-b4c9-8b89e247b320"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
