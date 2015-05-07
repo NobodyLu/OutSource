@@ -2,11 +2,11 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="PairingOutsource" version="3">
   <DEPS>
     <ID name="PairingOutsource" mc="Class" uid="b53458c4-9a4f-4317-86e7-861001d4e637"/>
+    <EXTID name="Outsource" mc="Class" uid="846d6945-babc-49e9-abee-fc45f03178c4"/>
     <EXTID name="Pairing" mc="Interface" uid="5b3ac860-7a14-4870-8f78-7cb5d423cc81"/>
-    <EXTID name="SecureRandom" mc="Class" uid="47129501-c9ae-4f9c-b4c9-6406a84dd691"/>
     <FOREIGNID name="JavaClass" mc="Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
     <FOREIGNID name="JavaImport" mc="TagType" uid="003800a8-0000-0155-0000-000000000000"/>
-    <FOREIGNID name="JavaInitValue" mc="NoteType" uid="00380080-0000-0994-0000-000000000000"/>
     <FOREIGNID name="JavaNoInitValue" mc="TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
     <FOREIGNID name="JavaTypeExpr" mc="TagType" uid="00380080-0000-01a4-0000-000000000000"/>
     <FOREIGNID name="JavaTypeExpr" mc="TagType" uid="003800a8-0000-0165-0000-000000000000"/>
@@ -48,7 +48,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="InitializePairing" mc="Operation" uid="86716cf5-7028-47a3-a21a-5b58618881d4"/>
+          <ID name="initializePairing" mc="Operation" uid="86716cf5-7028-47a3-a21a-5b58618881d4"/>
           <PID name="PairingOutsource" mc="Class" uid="b53458c4-9a4f-4317-86e7-861001d4e637"/>
           <ATTRIBUTES>
             <ATT name="Concurrency">false</ATT>
@@ -57,7 +57,7 @@
             <ATT name="Visibility">Public</ATT>
             <ATT name="IsClass">false</ATT>
             <ATT name="IsAbstract">true</ATT>
-            <ATT name="Name"><![CDATA[InitializePairing]]></ATT>
+            <ATT name="Name"><![CDATA[initializePairing]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
@@ -114,6 +114,39 @@
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
+        <OBJECT>
+          <ID name="initialize" mc="Operation" uid="61635ff0-44dc-4688-8edd-46993cad27d4"/>
+          <PID name="PairingOutsource" mc="Class" uid="b53458c4-9a4f-4317-86e7-861001d4e637"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[initialize]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="b55e2705-db98-48fd-bd97-d82b4cb8b593"/>
+                <PID name="PairingOutsource" mc="Class" uid="b53458c4-9a4f-4317-86e7-861001d4e637"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[pairing = initializePairing();]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
       </COMP>
       <COMP relation="OwnedAttribute">
         <OBJECT>
@@ -129,7 +162,7 @@
             <ATT name="IsUnique">false</ATT>
             <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
             <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-            <ATT name="Visibility">Private</ATT>
+            <ATT name="Visibility">Protected</ATT>
             <ATT name="IsClass">false</ATT>
             <ATT name="IsAbstract">false</ATT>
             <ATT name="Name"><![CDATA[pairing]]></ATT>
@@ -181,86 +214,19 @@
           </DEPENDENCIES>
         </OBJECT>
       </COMP>
-      <COMP relation="OwnedEnd">
+      <COMP relation="Parent">
         <OBJECT>
-          <ID name="random" mc="AssociationEnd" uid="f0671f55-d991-4702-84c1-526c22ad66b8"/>
+          <ID name="Generalization" mc="Generalization" uid="63e0ef3c-0b0e-4644-a378-ef9691d44206"/>
           <PID name="PairingOutsource" mc="Class" uid="b53458c4-9a4f-4317-86e7-861001d4e637"/>
           <ATTRIBUTES>
-            <ATT name="Aggregation">KindIsComposition</ATT>
-            <ATT name="IsChangeable">true</ATT>
-            <ATT name="Changeable">AccesNone</ATT>
-            <ATT name="IsDerived">false</ATT>
-            <ATT name="IsOrdered">false</ATT>
-            <ATT name="IsUnique">false</ATT>
-            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
-            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-            <ATT name="Visibility">Private</ATT>
-            <ATT name="IsClass">false</ATT>
-            <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[random]]></ATT>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
-            <LINK relation="Target">
-              <ID name="SecureRandom" mc="Class" uid="47129501-c9ae-4f9c-b4c9-6406a84dd691"/>
+            <LINK relation="SuperType">
+              <ID name="Outsource" mc="Class" uid="846d6945-babc-49e9-abee-fc45f03178c4"/>
             </LINK>
-            <COMP relation="Opposite">
-              <OBJECT>
-                <ID name="" mc="AssociationEnd" uid="d6947711-bbc1-47fa-8020-ebc2f12f7b78"/>
-                <PID name="PairingOutsource" mc="Class" uid="b53458c4-9a4f-4317-86e7-861001d4e637"/>
-                <ATTRIBUTES>
-                  <ATT name="Aggregation">KindIsAssociation</ATT>
-                  <ATT name="IsChangeable">true</ATT>
-                  <ATT name="Changeable">ReadWrite</ATT>
-                  <ATT name="IsDerived">false</ATT>
-                  <ATT name="IsOrdered">false</ATT>
-                  <ATT name="IsUnique">false</ATT>
-                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
-                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-                  <ATT name="Visibility">Public</ATT>
-                  <ATT name="IsClass">false</ATT>
-                  <ATT name="IsAbstract">false</ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <COMP relation="Opposite">
-                    <COMPID name="random" mc="AssociationEnd" uid="f0671f55-d991-4702-84c1-526c22ad66b8"/>
-                  </COMP>
-                  <COMP relation="Association">
-                    <OBJECT>
-                      <ID name="" mc="Association" uid="31fdda90-5572-4bf9-b49a-eb931970b4d0"/>
-                      <PID name="PairingOutsource" mc="Class" uid="b53458c4-9a4f-4317-86e7-861001d4e637"/>
-                      <ATTRIBUTES>
-                        <ATT name="Name"></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES></DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
-                </DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-            <COMP relation="Association">
-              <COMPID name="" mc="Association" uid="31fdda90-5572-4bf9-b49a-eb931970b4d0"/>
-            </COMP>
-            <COMP relation="Descriptor">
-              <OBJECT>
-                <ID name="" mc="Note" uid="69ecefcc-210b-4a7c-9b53-653b0236b7e1"/>
-                <PID name="PairingOutsource" mc="Class" uid="b53458c4-9a4f-4317-86e7-861001d4e637"/>
-                <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[new SecureRandom()]]></ATT>
-                  <ATT name="MimeType"></ATT>
-                  <ATT name="Name"></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Model">
-                    <FOREIGNID name="JavaInitValue" mc="NoteType" uid="00380080-0000-0994-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-            </COMP>
           </DEPENDENCIES>
         </OBJECT>
       </COMP>

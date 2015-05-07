@@ -10,9 +10,9 @@ public class EntityRuntime {
 //begin of modifiable zone(JavaSuper).....C/0a89eab6-61d5-4dfb-83e4-28db2f73ac01
 
 //end of modifiable zone(JavaSuper).......E/0a89eab6-61d5-4dfb-83e4-28db2f73ac01
-//begin of modifiable zone(JavaCode)......C/0a89eab6-61d5-4dfb-83e4-28db2f73ac01
-    	this.name = name;
-//end of modifiable zone(JavaCode)........E/0a89eab6-61d5-4dfb-83e4-28db2f73ac01
+//begin of modifiable zone................T/9edb5254-7900-41df-a279-46efe6f5911a
+        this.name = name;
+//end of modifiable zone..................E/9edb5254-7900-41df-a279-46efe6f5911a
     }
 
     String getName() {
@@ -34,9 +34,9 @@ public class EntityRuntime {
     }
 
     public void increateRuntime(long ns) {
-//begin of modifiable zone(JavaCode)......C/e0cd3b5e-48dc-40e6-ae1f-b4e78ced4129
-    	runtime += ns;
-//end of modifiable zone(JavaCode)........E/e0cd3b5e-48dc-40e6-ae1f-b4e78ced4129
+//begin of modifiable zone................T/29650c5d-7979-49b9-8864-9872cb73c137
+        runtime += ns;
+//end of modifiable zone..................E/29650c5d-7979-49b9-8864-9872cb73c137
     }
 
 }

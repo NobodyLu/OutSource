@@ -1,10 +1,20 @@
 package org.loccs.outsource;
 
+import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 
 public abstract class Outsource {
+    private List<String> entityName = new Vector<String> ();
+
+    private int repeat = 1;
+
     private Map<String, EntityRuntime> entityRuntime = new Hashtable<String, EntityRuntime> ();
+
+    protected SecureRandom random = new SecureRandom();
 
     public Outsource() {
 //begin of modifiable zone(JavaSuper).....C/a484ad5f-5452-4c82-b329-d521ba0da984
@@ -15,20 +25,70 @@ public abstract class Outsource {
 //end of modifiable zone(JavaCode)........E/a484ad5f-5452-4c82-b329-d521ba0da984
     }
 
-    public void addEntity(String name) {
-//begin of modifiable zone(JavaCode)......C/ad3376b1-1155-471e-b7fd-bd89dea99950
-
-//end of modifiable zone(JavaCode)........E/ad3376b1-1155-471e-b7fd-bd89dea99950
+    void setRepeat(int value) {
+//begin of modifiable zone................T/d2e80da4-5dbb-4610-8399-1357dcb945a6
+        // Automatically generated method. Please delete this comment before entering specific code.
+        this.repeat = value;
+//end of modifiable zone..................E/d2e80da4-5dbb-4610-8399-1357dcb945a6
     }
 
     public void evaluate() {
-//begin of modifiable zone(JavaCode)......C/7ebd909f-8272-4d69-ab2e-28b0a28af2ee
-
-//end of modifiable zone(JavaCode)........E/7ebd909f-8272-4d69-ab2e-28b0a28af2ee
+//begin of modifiable zone................T/bcec36bc-3f10-41f9-a122-f9ad15f7e68f
+        entityRuntime.clear();
+        
+        entityName = getAllEntityNames();
+        for (int i = 0; i < entityName.size(); i++)
+            addEntity(entityName.get(i));
+        
+        initialize();
+        
+        randomInput();
+             
+        boolean finish = false;
+        while (!finish) {
+            long start = System.nanoTime();
+            
+            StepInformation information = step();
+            
+            for (int i = 1; i < repeat; i++)
+                information = step();
+            
+            long end = System.nanoTime();
+            
+            EntityRuntime runtime = entityRuntime.get(information.getName());
+            runtime.increateRuntime(start - end);
+            
+            finish = information.isFinish();
+        }
+        
+        for (int i = 0; i < entityName.size(); i++) {
+            EntityRuntime runtime = entityRuntime.get(entityName.get(i));
+            System.out.println(entityName.get(i) + ": " + (runtime.getRuntime() / 1000000) + " ms.");
+        }
+//end of modifiable zone..................E/bcec36bc-3f10-41f9-a122-f9ad15f7e68f
     }
+
+    protected void addEntity(String name) {
+//begin of modifiable zone................T/8132b083-ecf5-4a94-888e-946b50704956
+        entityRuntime.put(name, new EntityRuntime(name));
+//end of modifiable zone..................E/8132b083-ecf5-4a94-888e-946b50704956
+    }
+
+    protected abstract List<String> getAllEntityNames();
 
     protected abstract void initialize();
 
+    protected abstract void randomInput();
+
     protected abstract StepInformation step();
+
+    protected BigInteger randomNumber(BigInteger bound) {
+//begin of modifiable zone(JavaCode)......C/77a68732-a26e-4f4e-9f80-4dc70ad3535b
+
+//end of modifiable zone(JavaCode)........E/77a68732-a26e-4f4e-9f80-4dc70ad3535b
+//begin of modifiable zone(JavaReturned)..C/77a68732-a26e-4f4e-9f80-4dc70ad3535b
+
+//end of modifiable zone(JavaReturned)....E/77a68732-a26e-4f4e-9f80-4dc70ad3535b
+    }
 
 }

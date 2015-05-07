@@ -10,10 +10,10 @@ public class StepInformation {
 //begin of modifiable zone(JavaSuper).....C/5b0ded7e-9176-466b-9e86-1d3b56b7cd18
 
 //end of modifiable zone(JavaSuper).......E/5b0ded7e-9176-466b-9e86-1d3b56b7cd18
-//begin of modifiable zone(JavaCode)......C/5b0ded7e-9176-466b-9e86-1d3b56b7cd18
-    	this.name = name;
-    	this.finish = finish;
-//end of modifiable zone(JavaCode)........E/5b0ded7e-9176-466b-9e86-1d3b56b7cd18
+//begin of modifiable zone................T/709f7507-c4fd-47b9-aa00-c1e929036536
+        this.name = name;
+        this.finish = finish;
+//end of modifiable zone..................E/709f7507-c4fd-47b9-aa00-c1e929036536
     }
 
     String getName() {

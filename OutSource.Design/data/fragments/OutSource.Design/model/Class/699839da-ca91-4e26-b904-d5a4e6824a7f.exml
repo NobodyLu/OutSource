@@ -69,6 +69,23 @@
             <LINK relation="Extension">
               <FOREIGNID name="create" mc="Stereotype" uid="00700680-0000-0204-0000-000000000000"/>
             </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="9edb5254-7900-41df-a279-46efe6f5911a"/>
+                <PID name="EntityRuntime" mc="Class" uid="699839da-ca91-4e26-b904-d5a4e6824a7f"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[this.name = name;]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
@@ -304,6 +321,23 @@
                 <DEPENDENCIES>
                   <LINK relation="Type">
                     <FOREIGNID name="long" mc="DataType" uid="00000004-0000-0011-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="29650c5d-7979-49b9-8864-9872cb73c137"/>
+                <PID name="EntityRuntime" mc="Class" uid="699839da-ca91-4e26-b904-d5a4e6824a7f"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[runtime += ns;]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
