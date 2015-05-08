@@ -1,13 +1,19 @@
 package org.loccs.outsource.pairing;
 
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Vector;
 import org.loccs.outsource.StepInformation;
 
 public class Ren201504PairingOutsource extends SymmetricPrimeOrderPairingOutsource {
+    protected BigInteger[] a = new BigInteger[4];
+
+    protected BigInteger[] b = new BigInteger[4];
+
     public Ren201504PairingOutsource(int rbits, int qbits) {
 //begin of modifiable zone................T/a2ef639a-c487-4ce7-9cf0-a92284d5ce10
-    	super(rbits, qbits);
+super(rbits, qbits);
+
 //end of modifiable zone..................E/a2ef639a-c487-4ce7-9cf0-a92284d5ce10
 //begin of modifiable zone(JavaCode)......C/30159e1b-d0ff-4254-895d-fe4607b81128
 
@@ -28,12 +34,25 @@ public class Ren201504PairingOutsource extends SymmetricPrimeOrderPairingOutsour
     }
 
     protected StepInformation step() {
-//begin of modifiable zone(JavaCode)......C/f4721aa1-b063-4596-94a7-d73ca35b3d9d
-
-//end of modifiable zone(JavaCode)........E/f4721aa1-b063-4596-94a7-d73ca35b3d9d
+//begin of modifiable zone................T/4a8d107b-c407-411b-82ed-85c58f6db806
+        if (nextStep.equals(""))
+            return rand();
+//end of modifiable zone..................E/4a8d107b-c407-411b-82ed-85c58f6db806
 //begin of modifiable zone................T/c4b2533b-9797-4fac-aae6-2386953c32e8
         return null;
 //end of modifiable zone..................E/c4b2533b-9797-4fac-aae6-2386953c32e8
+    }
+
+    protected StepInformation rand() {
+//begin of modifiable zone(JavaCode)......C/73c62e2f-c528-4f20-a3b4-e8f4c783443d
+    	for (int i = 0; i < 4; i++) {
+    		a[i] = randomNumber(order);
+    		b[i] = randomNumber(order);
+    	}
+//end of modifiable zone(JavaCode)........E/73c62e2f-c528-4f20-a3b4-e8f4c783443d
+//begin of modifiable zone................T/ea4cddbf-1907-4fec-b1e1-e38985f8f787
+        return new StepInformation("TP", "", false);
+//end of modifiable zone..................E/ea4cddbf-1907-4fec-b1e1-e38985f8f787
     }
 
     /**
@@ -41,10 +60,10 @@ public class Ren201504PairingOutsource extends SymmetricPrimeOrderPairingOutsour
      */
     public static void main(String[] args) {
 //begin of modifiable zone................T/2a614142-2ae8-4a73-a264-ca14463172a7
-    	Ren201504PairingOutsource outsource = new Ren201504PairingOutsource(160, 512);
-    	
-    	outsource.setRepeat(200);
-    	outsource.direct();
+        Ren201504PairingOutsource outsource = new Ren201504PairingOutsource(160, 512);
+        
+        outsource.setRepeat(200);
+        outsource.direct();
 //end of modifiable zone..................E/2a614142-2ae8-4a73-a264-ca14463172a7
     }
 
