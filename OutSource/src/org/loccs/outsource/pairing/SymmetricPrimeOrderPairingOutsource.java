@@ -15,6 +15,8 @@ public abstract class SymmetricPrimeOrderPairingOutsource extends PairingOutsour
 
     protected BigInteger order;
 
+    protected Element result;
+
     protected Element inputA;
 
     protected Element inputB;
@@ -46,6 +48,12 @@ public abstract class SymmetricPrimeOrderPairingOutsource extends PairingOutsour
         inputA = pairing.getG1().newRandomElement();
         inputB = pairing.getG2().newRandomElement();
 //end of modifiable zone..................E/96e82459-6229-4958-ab6b-8799bc0cdd38
+    }
+
+    protected void compute() {
+//begin of modifiable zone................T/8ba32e02-63e1-433a-a3fc-41ac1a3b5673
+    	result = pairing.pairing(inputA, inputB);
+//end of modifiable zone..................E/8ba32e02-63e1-433a-a3fc-41ac1a3b5673
     }
 
 }

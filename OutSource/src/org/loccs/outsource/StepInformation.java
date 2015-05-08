@@ -4,14 +4,17 @@ package org.loccs.outsource;
 public class StepInformation {
     private String name;
 
+    private String next;
+
     private boolean finish;
 
-    public StepInformation(String name, boolean finish) {
+    public StepInformation(String name, String next, boolean finish) {
 //begin of modifiable zone(JavaSuper).....C/5b0ded7e-9176-466b-9e86-1d3b56b7cd18
 
 //end of modifiable zone(JavaSuper).......E/5b0ded7e-9176-466b-9e86-1d3b56b7cd18
 //begin of modifiable zone................T/709f7507-c4fd-47b9-aa00-c1e929036536
         this.name = name;
+        this.next = next;
         this.finish = finish;
 //end of modifiable zone..................E/709f7507-c4fd-47b9-aa00-c1e929036536
     }
@@ -23,6 +26,15 @@ public class StepInformation {
 //begin of modifiable zone................T/93c7baf7-0ac6-42e0-abbb-dd122be45bd7
         return this.name;
 //end of modifiable zone..................E/93c7baf7-0ac6-42e0-abbb-dd122be45bd7
+    }
+
+    String getNext() {
+//begin of modifiable zone................T/98010def-e8dd-4502-9b4a-0d41fcd055c7
+        // Automatically generated method. Please delete this comment before entering specific code.
+//end of modifiable zone..................E/98010def-e8dd-4502-9b4a-0d41fcd055c7
+//begin of modifiable zone................T/23b81df4-4ccf-4547-9232-e8989170ad80
+        return this.next;
+//end of modifiable zone..................E/23b81df4-4ccf-4547-9232-e8989170ad80
     }
 
     boolean isFinish() {

@@ -4,6 +4,8 @@
     <ID name="pairing" mc="Package" uid="06602361-aa5a-4e51-8410-e1b130b34878"/>
     <COMPID name="PairingClassDiagram" mc="ClassDiagram" uid="0f55d7a2-2fc9-4ee5-92ad-b9752d6bdef3"/>
     <COMPID name="PairingOutsource" mc="Class" uid="b53458c4-9a4f-4317-86e7-861001d4e637"/>
+    <COMPID name="Ren201504ClassDiagram" mc="ClassDiagram" uid="e6c26f62-fb66-4b33-8d0d-2538b92f6a12"/>
+    <COMPID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
     <COMPID name="SymmetricPrimeOrderPairingOutsource" mc="Class" uid="1be39ae8-a602-4c10-8f58-c125481fbd28"/>
     <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
   </DEPS>
@@ -23,12 +25,14 @@
       <COMP relation="OwnedElement">
         <COMPID name="PairingOutsource" mc="Class" uid="b53458c4-9a4f-4317-86e7-861001d4e637"/>
         <COMPID name="SymmetricPrimeOrderPairingOutsource" mc="Class" uid="1be39ae8-a602-4c10-8f58-c125481fbd28"/>
+        <COMPID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
       </LINK>
       <COMP relation="Product">
         <COMPID name="PairingClassDiagram" mc="ClassDiagram" uid="0f55d7a2-2fc9-4ee5-92ad-b9752d6bdef3"/>
+        <COMPID name="Ren201504ClassDiagram" mc="ClassDiagram" uid="e6c26f62-fb66-4b33-8d0d-2538b92f6a12"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>
