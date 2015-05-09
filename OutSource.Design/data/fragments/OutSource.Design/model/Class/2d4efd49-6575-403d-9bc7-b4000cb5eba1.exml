@@ -3,6 +3,7 @@
   <DEPS>
     <ID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
     <EXTID name="BigInteger" mc="Class" uid="d14dd6ce-4449-4cb8-958e-1ccb7e239b62"/>
+    <EXTID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
     <EXTID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
     <EXTID name="SymmetricPrimeOrderPairingOutsource" mc="Class" uid="1be39ae8-a602-4c10-8f58-c125481fbd28"/>
     <FOREIGNID name="JavaClass" mc="Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
@@ -340,7 +341,7 @@ entities.add("U2");
                 <ID name="" mc="Note" uid="ea4cddbf-1907-4fec-b1e1-e38985f8f787"/>
                 <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return new StepInformation("TP", "", false);]]></ATT>
+                  <ATT name="Content"><![CDATA[return new StepInformation("TP", "", true);]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -348,6 +349,31 @@ entities.add("U2");
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="691fb0d6-5f8e-4ec2-b970-9f5b4f2c862d"/>
+                <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[for (int i = 0; i < 4; i++) {
+    a[i] = randomNumber(order);
+    b[i] = randomNumber(order);
+}
+for (int i = 0; i < 2; i++) {
+    Inv_a[i] = a[i].modInverse(order);
+    Inv_b[i] = b[i].modInverse(order);
+}
+P1 = pairing.getG1().newRandomElement();
+P2 = pairing.getG2().newRandomElement();
+]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -443,8 +469,9 @@ entities.add("U2");
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[Ren201504PairingOutsource outsource = new Ren201504PairingOutsource(160, 512);
 
-outsource.setRepeat(200);
-outsource.direct();
+outsource.setRepeat(1000);
+//outsource.direct();
+outsource.evaluate();
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
@@ -547,6 +574,260 @@ outsource.direct();
                   <COMP relation="Actual">
                     <OBJECT>
                       <ID name="" mc="TagParameter" uid="240aeb79-e1f3-4f36-b03e-db37b56f42d1"/>
+                      <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[Array]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3765-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Inv_a" mc="Attribute" uid="b51513cb-6140-4eb8-9092-dccf4a86b4c0"/>
+          <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[new BigInteger[2]]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[Inv_a]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="BigInteger" mc="Class" uid="d14dd6ce-4449-4cb8-958e-1ccb7e239b62"/>
+            </LINK>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="TaggedValue" uid="bdc60d46-2902-4a00-95cd-1b1f150b0478"/>
+                <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="TagParameter" uid="b586b60d-deec-42b8-8997-888654a24ae4"/>
+                      <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[Array]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3765-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Inv_b" mc="Attribute" uid="0c1471ba-ef2b-4442-b726-f0a09f12ffbb"/>
+          <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[new BigInteger[2]]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[Inv_b]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="BigInteger" mc="Class" uid="d14dd6ce-4449-4cb8-958e-1ccb7e239b62"/>
+            </LINK>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="TaggedValue" uid="980e6049-3c1a-4864-91a8-bb82083c7c3e"/>
+                <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="TagParameter" uid="0ccd19ee-a1ce-4ead-948e-fdc91d6a647f"/>
+                      <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[Array]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3765-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="P1" mc="Attribute" uid="0d63baed-53e6-4f06-bc1a-c7f8b5d4b4da"/>
+          <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[P1]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="P2" mc="Attribute" uid="20d3f4b5-47ea-4df3-896f-38eea518531a"/>
+          <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[P2]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="aP1" mc="Attribute" uid="20a7a75f-f1b2-429b-a466-bff0e951205b"/>
+          <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[new Element[4]]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[aP1]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="TaggedValue" uid="59035914-9572-4d71-9ab2-1a5de1f1865e"/>
+                <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="TagParameter" uid="37e1c222-92f2-4b68-abb3-8cf53595fe73"/>
+                      <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[Array]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3765-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="bP2" mc="Attribute" uid="35e91445-1566-4125-b449-f7f19e7e4cd4"/>
+          <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[new Element[4]]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[bP2]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="TaggedValue" uid="006cabbb-c222-478b-a6f9-df5175340909"/>
+                <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="TagParameter" uid="1a5a3177-7afc-41ef-8937-38db2a67f163"/>
                       <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
                       <ATTRIBUTES>
                         <ATT name="Value"><![CDATA[Array]]></ATT>

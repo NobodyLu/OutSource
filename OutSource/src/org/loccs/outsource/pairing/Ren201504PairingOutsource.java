@@ -3,12 +3,25 @@ package org.loccs.outsource.pairing;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Vector;
+import it.unisa.dia.gas.jpbc.Element;
 import org.loccs.outsource.StepInformation;
 
 public class Ren201504PairingOutsource extends SymmetricPrimeOrderPairingOutsource {
     protected BigInteger[] a = new BigInteger[4];
 
     protected BigInteger[] b = new BigInteger[4];
+
+    protected BigInteger[] Inv_a = new BigInteger[2];
+
+    protected BigInteger[] Inv_b = new BigInteger[2];
+
+    protected Element P1;
+
+    protected Element P2;
+
+    protected Element[] aP1 = new Element[4];
+
+    protected Element[] bP2 = new Element[4];
 
     public Ren201504PairingOutsource(int rbits, int qbits) {
 //begin of modifiable zone................T/a2ef639a-c487-4ce7-9cf0-a92284d5ce10
@@ -44,14 +57,24 @@ super(rbits, qbits);
     }
 
     protected StepInformation rand() {
-//begin of modifiable zone(JavaCode)......C/73c62e2f-c528-4f20-a3b4-e8f4c783443d
-    	for (int i = 0; i < 4; i++) {
-    		a[i] = randomNumber(order);
-    		b[i] = randomNumber(order);
-    	}
-//end of modifiable zone(JavaCode)........E/73c62e2f-c528-4f20-a3b4-e8f4c783443d
+//begin of modifiable zone................T/691fb0d6-5f8e-4ec2-b970-9f5b4f2c862d
+        for (int i = 0; i < 4; i++) {
+            a[i] = randomNumber(order);
+            b[i] = randomNumber(order);
+        }
+        for (int i = 0; i < 2; i++) {
+            Inv_a[i] = a[i].modInverse(order);
+            Inv_b[i] = b[i].modInverse(order);
+        }
+        P1 = pairing.getG1().newRandomElement();
+        P2 = pairing.getG2().newRandomElement();
+        for (int i = 0; i < 4; i++) {
+            aP1[i] = P1.mul(a[i]);
+            bP2[i] = P2.mul(b[i]);
+        }
+//end of modifiable zone..................E/691fb0d6-5f8e-4ec2-b970-9f5b4f2c862d
 //begin of modifiable zone................T/ea4cddbf-1907-4fec-b1e1-e38985f8f787
-        return new StepInformation("TP", "", false);
+        return new StepInformation("TP", "", true);
 //end of modifiable zone..................E/ea4cddbf-1907-4fec-b1e1-e38985f8f787
     }
 
@@ -62,8 +85,9 @@ super(rbits, qbits);
 //begin of modifiable zone................T/2a614142-2ae8-4a73-a264-ca14463172a7
         Ren201504PairingOutsource outsource = new Ren201504PairingOutsource(160, 512);
         
-        outsource.setRepeat(200);
-        outsource.direct();
+        outsource.setRepeat(10);
+        //outsource.direct();
+        outsource.evaluate();
 //end of modifiable zone..................E/2a614142-2ae8-4a73-a264-ca14463172a7
     }
 
