@@ -302,6 +302,9 @@ if (nextStep.equals("U1Response2"))
 
 if (nextStep.equals("U2Response2"))
     return u2Response2();
+
+if (nextStep.equals("TVerify"))
+    return tVerify();
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
@@ -385,9 +388,10 @@ for (int i = 0; i < 2; i++) {
 }
 P1 = pairing.getG1().newRandomElement();
 P2 = pairing.getG2().newRandomElement();
+
 for (int i = 0; i < 4; i++) {
-    aP1[i] = P1.mul(a[i]);
-    bP2[i] = P2.mul(b[i]);
+    aP1[i] = P1.duplicate().mul(a[i]);
+    bP2[i] = P2.duplicate().mul(b[i]);
 }
 pair_a0P1_b0P2 = pairing.pairing(aP1[0], bP2[0]);
 inv_pair_a2P1_b0P2 = pairing.pairing(aP1[2], bP2[0]);
@@ -472,11 +476,11 @@ inv_pair_a1P1_b3P2 = inv_pair_a1P1_b3P2.invert();
                 <ID name="" mc="Note" uid="1b081990-1112-4559-ab49-92be22afbbfb"/>
                 <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[inputA_aP1[0] = inputA.sub(aP1[0]);
-inputB_bP2[0] = inputB.sub(bP2[0]);
+                  <ATT name="Content"><![CDATA[inputA_aP1[0] = inputA.duplicate().sub(aP1[0]);
+inputB_bP2[0] = inputB.duplicate().sub(bP2[0]);
 for (int i = 1; i < 4; i++) {
-    inputA_aP1[i] = inputA_aP1[0].add(aP1[i]);
-    inputB_bP2[i] = inputB_bP2[0].add(bP2[i]);
+    inputA_aP1[i] = inputA_aP1[0].duplicate().add(aP1[i]);
+    inputB_bP2[i] = inputB_bP2[0].duplicate().add(bP2[i]);
 }
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
@@ -703,16 +707,16 @@ alpha[2][3] = pairing.pairing(aP1[0], inputB_bP2[2]);
                 <ID name="" mc="Note" uid="634b85e5-c985-4a17-a0fc-89e21560829a"/>
                 <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[pair_inputA_a0P1_bP2[0] = alpha[2][2].mul(inv_pair_a2P1_b0P2);
-pair_inputA_a0P1_bP2[1] = alpha[1][2].mul(inv_pair_a3P1_b1P2);
-pair_aP1_inputB_b0P2[0] = alpha[2][3].mul(inv_pair_a0P1_b2P2);
-pair_aP1_inputB_b0P2[1] = alpha[1][3].mul(inv_pair_a1P1_b3P2);
+                  <ATT name="Content"><![CDATA[pair_inputA_a0P1_bP2[0] = alpha[2][2].duplicate().mul(inv_pair_a2P1_b0P2);
+pair_inputA_a0P1_bP2[1] = alpha[1][2].duplicate().mul(inv_pair_a3P1_b1P2);
+pair_aP1_inputB_b0P2[0] = alpha[2][3].duplicate().mul(inv_pair_a0P1_b2P2);
+pair_aP1_inputB_b0P2[1] = alpha[1][3].duplicate().mul(inv_pair_a1P1_b3P2);
 for (int i = 1; i <= 2; i++)
     t[i] = randomNumber(order);
-t1_inv_b[0] = t[1].multiply(inv_b[0]).mod(order);
-t2_inv_a[0] = t[2].multiply(inv_a[0]).mod(order);
-t1_inv_b[1] = t[1].multiply(inv_b[1]).mod(order);
-t2_inv_a[1] = t[2].multiply(inv_a[1]).mod(order);
+t1_inv_b[0] = t[1].multiply(inv_b[0]);
+t2_inv_a[0] = t[2].multiply(inv_a[0]);
+t1_inv_b[1] = t[1].multiply(inv_b[1]);
+t2_inv_a[1] = t[2].multiply(inv_a[1]);
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
@@ -771,8 +775,8 @@ t2_inv_a[1] = t[2].multiply(inv_a[1]).mod(order);
                 <ID name="" mc="Note" uid="1eb0d3d0-82e1-45d5-a8ce-9c6b1f0c851d"/>
                 <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[alpha[1][4] = pair_inputA_a0P1_bP2[0].pow(t1_inv_b[0]);
-alpha[1][5] = pair_aP1_inputB_b0P2[0].pow(t2_inv_a[0]);
+                  <ATT name="Content"><![CDATA[alpha[1][4] = pair_inputA_a0P1_bP2[0].duplicate().pow(t1_inv_b[0]);
+alpha[1][5] = pair_aP1_inputB_b0P2[0].duplicate().pow(t2_inv_a[0]);
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
@@ -846,8 +850,8 @@ alpha[1][5] = pair_aP1_inputB_b0P2[0].pow(t2_inv_a[0]);
                 <ID name="" mc="Note" uid="d5475988-f370-4f56-ad45-77fec2566c20"/>
                 <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[alpha[2][4] = pair_inputA_a0P1_bP2[1].pow(t1_inv_b[1]);
-alpha[2][5] = pair_aP1_inputB_b0P2[1].pow(t2_inv_a[1]);
+                  <ATT name="Content"><![CDATA[alpha[2][4] = pair_inputA_a0P1_bP2[1].duplicate().pow(t1_inv_b[1]);
+alpha[2][5] = pair_aP1_inputB_b0P2[1].duplicate().pow(t2_inv_a[1]);
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
@@ -912,6 +916,53 @@ alpha[2][5] = pair_aP1_inputB_b0P2[1].pow(t2_inv_a[1]);
                 <DEPENDENCIES>
                   <LINK relation="Type">
                     <ID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="0a228908-5ab0-4e4b-b408-4e7b7c2acd4d"/>
+                <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[if (!alpha[1][4].isEqual(alpha[2][4]))
+    System.out.println("fail to verify.");
+
+if (!alpha[1][5].isEqual(alpha[2][5]))
+    System.out.println("fail to verify.");
+
+if (!alpha[2][1].isEqual(alpha[1][1].duplicate().mul(pair_inputA_a0P1_bP2[1])
+        .mul(pair_aP1_inputB_b0P2[1]).mul(pair_a1P1_b1P2)))
+    System.out.println("fail to verify.");
+
+Element outsourceResult = alpha[1][1].duplicate().mul(pair_inputA_a0P1_bP2[0])
+        .mul(pair_aP1_inputB_b0P2[0]).mul(pair_a0P1_b0P2);
+
+if (!outsourceResult.isEqual(result))
+    System.out.println("Incorrect outsource result.");
+]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="e3014202-4e45-46c7-9e95-8029c2cef00a"/>
+                <PID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return new StepInformation("T", "", true, true);]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -1007,8 +1058,10 @@ alpha[2][5] = pair_aP1_inputB_b0P2[1].pow(t2_inv_a[1]);
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[Ren201504PairingOutsource outsource = new Ren201504PairingOutsource(160, 512);
 
-outsource.setRepeat(100);
+outsource.setRepeat(200);
+
 //outsource.direct();
+
 outsource.evaluate();
 ]]></ATT>
                   <ATT name="MimeType"></ATT>

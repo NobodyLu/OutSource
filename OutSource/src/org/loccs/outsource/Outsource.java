@@ -61,15 +61,11 @@ public abstract class Outsource {
         
         randomInput();
         
-        long start = System.nanoTime();
-        for (int i = 0; i < repeat; i++)
-            compute();
-        long end = System.nanoTime();
-        System.out.println("Direct computer time: " + (end - start) / 1000000 + "ms.");
+        compute();
              
         boolean finish = false;
         while (!finish) {
-            start = System.nanoTime();
+            long start = System.nanoTime();
             
             StepInformation information = step();
             
@@ -78,7 +74,7 @@ public abstract class Outsource {
             		information = step();
             }
             
-            end = System.nanoTime();
+            long end = System.nanoTime();
             
             EntityRuntime runtime = entityRuntime.get(information.getName());
             runtime.increateRuntime(end - start);
