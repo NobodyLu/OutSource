@@ -8,7 +8,9 @@ public class StepInformation {
 
     private boolean finish;
 
-    public StepInformation(String name, String next, boolean finish) {
+    protected boolean repeat;
+
+    public StepInformation(String name, String next, boolean finish, boolean repeat) {
 //begin of modifiable zone(JavaSuper).....C/5b0ded7e-9176-466b-9e86-1d3b56b7cd18
 
 //end of modifiable zone(JavaSuper).......E/5b0ded7e-9176-466b-9e86-1d3b56b7cd18
@@ -16,6 +18,7 @@ public class StepInformation {
         this.name = name;
         this.next = next;
         this.finish = finish;
+        this.repeat = repeat;
 //end of modifiable zone..................E/709f7507-c4fd-47b9-aa00-c1e929036536
     }
 
@@ -44,6 +47,15 @@ public class StepInformation {
 //begin of modifiable zone................T/f77847c0-986a-4d37-8c20-59f13cc3a3f0
         return this.finish;
 //end of modifiable zone..................E/f77847c0-986a-4d37-8c20-59f13cc3a3f0
+    }
+
+    boolean isRepeat() {
+//begin of modifiable zone................T/08d9a6fb-efc1-4536-8037-d1018c381c26
+        // Automatically generated method. Please delete this comment before entering specific code.
+//end of modifiable zone..................E/08d9a6fb-efc1-4536-8037-d1018c381c26
+//begin of modifiable zone................T/ef634486-c816-4eb9-8f34-b737e5a2fe83
+        return this.repeat;
+//end of modifiable zone..................E/ef634486-c816-4eb9-8f34-b737e5a2fe83
     }
 
 }

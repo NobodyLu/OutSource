@@ -45,7 +45,7 @@ public abstract class Outsource {
             compute();
         long end = System.nanoTime();
         
-        System.out.println("Average direct computer time: " + (end - start) / 1000000 + "ms.");
+        System.out.println("Direct computer time: " + (end - start) / 1000000 + "ms.");
 //end of modifiable zone..................E/4c2d19da-f4e6-40f7-bbcf-c14bc0f21c11
     }
 
@@ -61,18 +61,24 @@ public abstract class Outsource {
         
         randomInput();
         
-        compute();
+        long start = System.nanoTime();
+        for (int i = 0; i < repeat; i++)
+            compute();
+        long end = System.nanoTime();
+        System.out.println("Direct computer time: " + (end - start) / 1000000 + "ms.");
              
         boolean finish = false;
         while (!finish) {
-            long start = System.nanoTime();
+            start = System.nanoTime();
             
             StepInformation information = step();
             
-            for (int i = 1; i < repeat; i++)
-                information = step();
+            if (information.isRepeat()) {
+            	for (int i = 1; i < repeat; i++)
+            		information = step();
+            }
             
-            long end = System.nanoTime();
+            end = System.nanoTime();
             
             EntityRuntime runtime = entityRuntime.get(information.getName());
             runtime.increateRuntime(end - start);
