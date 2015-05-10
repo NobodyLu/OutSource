@@ -52,7 +52,7 @@ public class Ren201504PairingOutsource extends SymmetricPrimeOrderPairingOutsour
     protected BigInteger[] t2_inv_a = new BigInteger[2];
 
     public Ren201504PairingOutsource(int rbits, int qbits) {
-super(rbits, qbits);
+    	super(rbits, qbits);
 
     }
 
