@@ -292,6 +292,9 @@ if (nextStep.equals("U1Response"))
 
 if (nextStep.equals("U2Response"))
     return u2Response();
+
+if (nextStep.equals("TVerify"))
+    return tVerify();
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
@@ -673,9 +676,15 @@ alpha_prime[4] = pairing.pairing(x7P1, x8P2);
                 <ID name="" mc="Note" uid="251964e5-424b-4ea7-8edf-c53beee55432"/>
                 <PID name="TZR1PairingOutsource" mc="Class" uid="fb86bb05-9afa-44b8-b52d-a31bf352eb22"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[Element outsourceResult = alpha[1].duplicate().mul(alpha[2].duplicate().invert())
-        .mul(alpha[3].duplicate().invert()).mul(v.getPair().duplicate().invert())
-        .mul(alpha[0]);
+                  <ATT name="Content"><![CDATA[if (!alpha[2].isEqual(alpha_prime[3]))
+    System.out.println("fail to verify.");
+
+if (!pair_P1_P2_x7x8.equals(alpha_prime[4]))
+    System.out.println("fail to verify.");
+
+Element outsourceResult =  alpha[1].duplicate()
+        .mul(alpha_prime[1]).mul(alpha_prime[2])               
+        .mul(pair_P1_P2_x5_x6_x2);
 
 if (!outsourceResult.isEqual(result))
     System.out.println("Incorrect outsource result.");

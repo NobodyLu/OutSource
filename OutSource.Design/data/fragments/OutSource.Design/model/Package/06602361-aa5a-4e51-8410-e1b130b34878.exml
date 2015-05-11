@@ -11,6 +11,8 @@
     <COMPID name="SymmetricPrimeOrderPairingOutsource" mc="Class" uid="1be39ae8-a602-4c10-8f58-c125481fbd28"/>
     <COMPID name="TZR1ClassDiagram" mc="ClassDiagram" uid="b7f71f3c-6a3f-47ae-9035-b43b99e4359f"/>
     <COMPID name="TZR1PairingOutsource" mc="Class" uid="fb86bb05-9afa-44b8-b52d-a31bf352eb22"/>
+    <COMPID name="TZR2ClassDiagram" mc="ClassDiagram" uid="5439a5a4-c383-4294-98ad-5824ffd85a8c"/>
+    <COMPID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
     <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
   </DEPS>
   <OBJECT>
@@ -32,6 +34,7 @@
         <COMPID name="Ren201504PairingOutsource" mc="Class" uid="2d4efd49-6575-403d-9bc7-b4000cb5eba1"/>
         <COMPID name="PairPairingOutsource" mc="Class" uid="3dd92cf8-d99a-4d72-8159-9e8bca113836"/>
         <COMPID name="TZR1PairingOutsource" mc="Class" uid="fb86bb05-9afa-44b8-b52d-a31bf352eb22"/>
+        <COMPID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
@@ -41,6 +44,7 @@
         <COMPID name="Ren201504ClassDiagram" mc="ClassDiagram" uid="e6c26f62-fb66-4b33-8d0d-2538b92f6a12"/>
         <COMPID name="PairClassDiagram" mc="ClassDiagram" uid="1b4a917e-e357-41a2-ad1d-4c0eb70974eb"/>
         <COMPID name="TZR1ClassDiagram" mc="ClassDiagram" uid="b7f71f3c-6a3f-47ae-9035-b43b99e4359f"/>
+        <COMPID name="TZR2ClassDiagram" mc="ClassDiagram" uid="5439a5a4-c383-4294-98ad-5824ffd85a8c"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>
