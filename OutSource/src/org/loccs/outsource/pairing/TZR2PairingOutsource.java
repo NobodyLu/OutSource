@@ -13,17 +13,39 @@ public class TZR2PairingOutsource extends SymmetricPrimeOrderPairingOutsource {
 
     protected RandTuple x_prime;
 
+    protected BigInteger t = new BigInteger("3");
+
     protected Element inputA_x1P1;
 
     protected Element inputB_inv_x1_x2_P2;
 
     protected Element tA_prime_x1_inv_x2_x3_P1;
 
-    protected BigInteger t = new BigInteger("3");
+    protected Element neg_prime_inv_x1_x2_P2;
+
+    protected Element neg_prime_x1P1;
+
+    protected Element inputB_prime_inv_x1_x4_P2;
+
+    protected Element tA_prime_x1P1;
+
+    protected Element inputB_prime_inv_x1_x2_P2;
+
+    protected Element inputA_x1_inv_x2_x3_P1;
+
+    protected Element neg_inv_x1_x2_P2;
+
+    protected Element neg_x1P1;
+
+    protected Element inputB_inv_x1_x4_P2;
+
+    protected Element[] alpha = new Element[4];
+
+    protected Element[] alpha_prime = new Element[4];
 
     public TZR2PairingOutsource(int rbits, int qbits) {
 //begin of modifiable zone................T/88e38269-f123-49ab-970f-cc33038fe2cc
-super(rbits, qbits);
+    	super(rbits, qbits);
 
 //end of modifiable zone..................E/88e38269-f123-49ab-970f-cc33038fe2cc
 //begin of modifiable zone(JavaCode)......C/c9f44001-c78a-4f6a-92ca-1febca5536aa
@@ -51,6 +73,15 @@ super(rbits, qbits);
         
         if (nextStep.equals("TQuery"))
             return tQuery();
+        
+        if (nextStep.equals("U1Response"))
+            return u1Response();
+        
+        if (nextStep.equals("U2Response"))
+            return u2Response();
+        
+        if (nextStep.equals("TVerify"))
+            return tVerify();
 //end of modifiable zone..................E/f0a2b8a8-bb44-43bc-b86a-d1e79afbb78a
 //begin of modifiable zone................T/ff013592-eb61-4e15-bd4a-b5ebcee37194
         return new StepInformation("TP", "", true, false);
@@ -74,10 +105,60 @@ super(rbits, qbits);
         inputA_x1P1 = inputA.duplicate().add(x.getX1P1());
         inputB_inv_x1_x2_P2 = inputB.duplicate().add(x.getInvX1X2P2());
         tA_prime_x1_inv_x2_x3_P1 = inputA.duplicate().mul(t).add(x_prime.getX1InvX2X3P1());
+        neg_prime_inv_x1_x2_P2 = x_prime.getInvX1X2P2().duplicate().negate();
+        neg_prime_x1P1 = x_prime.getX1P1().duplicate().negate();
+        inputB_prime_inv_x1_x4_P2 = inputB.duplicate().add(x_prime.getInvX1X4P2());
+        
+        tA_prime_x1P1 = inputA.duplicate().mul(t).add(x_prime.getX1P1());
+        inputB_prime_inv_x1_x2_P2 = inputB.duplicate().add(x_prime.getInvX1X2P2());
+        inputA_x1_inv_x2_x3_P1 = inputA.duplicate().add(x.getX1InvX2X3P1());
+        neg_inv_x1_x2_P2 = x.getInvX1X2P2().duplicate().negate();
+        neg_x1P1 = x.getX1P1().duplicate().negate();
+        inputB_inv_x1_x4_P2 = inputB.duplicate().add(x.getInvX1X4P2());
 //end of modifiable zone..................E/9ae0eabf-70d6-475e-afef-df27412ad5e6
 //begin of modifiable zone................T/c51578ff-51a9-4b2d-937d-efa863969120
         return new StepInformation("T", "U1Response", false, true);
 //end of modifiable zone..................E/c51578ff-51a9-4b2d-937d-efa863969120
+    }
+
+    protected StepInformation u1Response() {
+//begin of modifiable zone................T/f3081498-2319-4234-b331-5d861085e43e
+        alpha[1] = pairing.pairing(inputA_x1P1, inputB_inv_x1_x2_P2);
+        alpha[2] = pairing.pairing(tA_prime_x1_inv_x2_x3_P1, neg_prime_inv_x1_x2_P2);
+        alpha[3] = pairing.pairing(neg_prime_x1P1, inputB_prime_inv_x1_x4_P2);
+//end of modifiable zone..................E/f3081498-2319-4234-b331-5d861085e43e
+//begin of modifiable zone................T/b3ed868d-a4da-4512-8ab4-4c0cad3a3f7d
+        return new StepInformation("U1", "U2Response", false, true);
+//end of modifiable zone..................E/b3ed868d-a4da-4512-8ab4-4c0cad3a3f7d
+    }
+
+    protected StepInformation u2Response() {
+//begin of modifiable zone................T/2662e0ea-a9af-4fe8-a504-f86d58007adb
+        alpha_prime[1] = pairing.pairing(tA_prime_x1P1, inputB_prime_inv_x1_x2_P2);
+        alpha_prime[2] = pairing.pairing(inputA_x1_inv_x2_x3_P1, neg_inv_x1_x2_P2);
+        alpha_prime[3] = pairing.pairing(neg_x1P1, inputB_inv_x1_x4_P2);
+//end of modifiable zone..................E/2662e0ea-a9af-4fe8-a504-f86d58007adb
+//begin of modifiable zone................T/13fde9c8-16f6-4086-9775-c58427293929
+        return new StepInformation("U2", "TVerify", false, true);
+//end of modifiable zone..................E/13fde9c8-16f6-4086-9775-c58427293929
+    }
+
+    protected StepInformation tVerify() {
+//begin of modifiable zone................T/443795d9-425f-4461-ba4c-69c356b77ab7
+        Element o = alpha[1].duplicate().mul(alpha_prime[2]).mul(alpha_prime[3])
+                .mul(x.getPair());
+        Element o_prime = alpha_prime[1].duplicate().mul(alpha[2]).mul(alpha[3])
+                .mul(x_prime.getPair());
+        
+        if (!o.duplicate().pow(t).equals(o_prime))
+            System.out.println("fail to verify.");
+        
+        if (!o.isEqual(result))
+            System.out.println("Incorrect outsource result.");
+//end of modifiable zone..................E/443795d9-425f-4461-ba4c-69c356b77ab7
+//begin of modifiable zone................T/a2b24af1-9fd2-424f-9daf-c4c01b814459
+        return new StepInformation("T", "", true, true);
+//end of modifiable zone..................E/a2b24af1-9fd2-424f-9daf-c4c01b814459
     }
 
     /**

@@ -288,6 +288,15 @@ entities.add("U2");
 
 if (nextStep.equals("TQuery"))
     return tQuery();
+
+if (nextStep.equals("U1Response"))
+    return u1Response();
+
+if (nextStep.equals("U2Response"))
+    return u2Response();
+
+if (nextStep.equals("TVerify"))
+    return tVerify();
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
@@ -441,6 +450,16 @@ x_prime = new RandTuple(P[1], P[2]);
                   <ATT name="Content"><![CDATA[inputA_x1P1 = inputA.duplicate().add(x.getX1P1());
 inputB_inv_x1_x2_P2 = inputB.duplicate().add(x.getInvX1X2P2());
 tA_prime_x1_inv_x2_x3_P1 = inputA.duplicate().mul(t).add(x_prime.getX1InvX2X3P1());
+neg_prime_inv_x1_x2_P2 = x_prime.getInvX1X2P2().duplicate().negate();
+neg_prime_x1P1 = x_prime.getX1P1().duplicate().negate();
+inputB_prime_inv_x1_x4_P2 = inputB.duplicate().add(x_prime.getInvX1X4P2());
+
+tA_prime_x1P1 = inputA.duplicate().mul(t).add(x_prime.getX1P1());
+inputB_prime_inv_x1_x2_P2 = inputB.duplicate().add(x_prime.getInvX1X2P2());
+inputA_x1_inv_x2_x3_P1 = inputA.duplicate().add(x.getX1InvX2X3P1());
+neg_inv_x1_x2_P2 = x.getInvX1X2P2().duplicate().negate();
+neg_x1P1 = x.getX1P1().duplicate().negate();
+inputB_inv_x1_x4_P2 = inputB.duplicate().add(x.getInvX1X4P2());
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
@@ -449,6 +468,241 @@ tA_prime_x1_inv_x2_x3_P1 = inputA.duplicate().mul(t).add(x_prime.getX1InvX2X3P1(
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="u1Response" mc="Operation" uid="48c39fe8-10ae-4a4f-a8b8-c6fa100dac9e"/>
+          <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[u1Response]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="01148c6e-2609-44d8-acf7-aba7ff8928c5"/>
+                <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="f3081498-2319-4234-b331-5d861085e43e"/>
+                <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[alpha[1] = pairing.pairing(inputA_x1P1, inputB_inv_x1_x2_P2);
+alpha[2] = pairing.pairing(tA_prime_x1_inv_x2_x3_P1, neg_prime_inv_x1_x2_P2);
+alpha[3] = pairing.pairing(neg_prime_x1P1, inputB_prime_inv_x1_x4_P2);
+]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="b3ed868d-a4da-4512-8ab4-4c0cad3a3f7d"/>
+                <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return new StepInformation("U1", "U2Response", false, true);]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="u2Response" mc="Operation" uid="a607b266-b1eb-4567-b33a-154bf3758ba8"/>
+          <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[u2Response]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="9ec9f8f0-11e5-442f-99ce-a537adc013bd"/>
+                <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="2662e0ea-a9af-4fe8-a504-f86d58007adb"/>
+                <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[alpha_prime[1] = pairing.pairing(tA_prime_x1P1, inputB_prime_inv_x1_x2_P2);
+alpha_prime[2] = pairing.pairing(inputA_x1_inv_x2_x3_P1, neg_inv_x1_x2_P2);
+alpha_prime[3] = pairing.pairing(neg_x1P1, inputB_inv_x1_x4_P2);
+]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="13fde9c8-16f6-4086-9775-c58427293929"/>
+                <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return new StepInformation("U2", "TVerify", false, true);]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="tVerify" mc="Operation" uid="735451ed-9b92-4005-b28c-34157c829d6c"/>
+          <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[tVerify]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="08d04847-bbaa-46f0-938a-e59542b2d7a2"/>
+                <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="443795d9-425f-4461-ba4c-69c356b77ab7"/>
+                <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Element o = alpha[1].duplicate().mul(alpha_prime[2]).mul(alpha_prime[3])
+        .mul(x.getPair());
+Element o_prime = alpha_prime[1].duplicate().mul(alpha[2]).mul(alpha[3])
+        .mul(x_prime.getPair());
+
+if (!o.duplicate().pow(t).equals(o_prime))
+    System.out.println("fail to verify.");
+
+if (!o.isEqual(result))
+    System.out.println("Incorrect outsource result.");
+]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="a2b24af1-9fd2-424f-9daf-c4c01b814459"/>
+                <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return new StepInformation("T", "", true, true);]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -667,6 +921,31 @@ outsource.evaluate();
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
+          <ID name="t" mc="Attribute" uid="8c23dd85-bade-4e61-a851-0d03b2a2ab50"/>
+          <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[new BigInteger("3")]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[t]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="BigInteger" mc="Class" uid="d14dd6ce-4449-4cb8-958e-1ccb7e239b62"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
           <ID name="inputA_x1P1" mc="Attribute" uid="abd2f859-0f09-4fde-b0d2-4d9409fd1946"/>
           <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
           <ATTRIBUTES>
@@ -742,11 +1021,11 @@ outsource.evaluate();
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="t" mc="Attribute" uid="8c23dd85-bade-4e61-a851-0d03b2a2ab50"/>
+          <ID name="neg_prime_inv_x1_x2_P2" mc="Attribute" uid="9898c164-88b0-4195-8273-116f435617e5"/>
           <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
-            <ATT name="Value"><![CDATA[new BigInteger("3")]]></ATT>
+            <ATT name="Value"></ATT>
             <ATT name="TargetIsClass">false</ATT>
             <ATT name="Changeable">AccesNone</ATT>
             <ATT name="IsDerived">false</ATT>
@@ -757,13 +1036,315 @@ outsource.evaluate();
             <ATT name="Visibility">Protected</ATT>
             <ATT name="IsClass">false</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[t]]></ATT>
+            <ATT name="Name"><![CDATA[neg_prime_inv_x1_x2_P2]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
             <LINK relation="Type">
-              <ID name="BigInteger" mc="Class" uid="d14dd6ce-4449-4cb8-958e-1ccb7e239b62"/>
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
             </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="neg_prime_x1P1" mc="Attribute" uid="78ce1cc4-dce9-407a-bf3f-89eb884d230f"/>
+          <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[neg_prime_x1P1]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="inputB_prime_inv_x1_x4_P2" mc="Attribute" uid="c111bb1d-e646-45c3-91d5-4f853266b199"/>
+          <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[inputB_prime_inv_x1_x4_P2]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="tA_prime_x1P1" mc="Attribute" uid="843a36fc-6d6e-4e61-a061-0b9263041dfc"/>
+          <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[tA_prime_x1P1]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="inputB_prime_inv_x1_x2_P2" mc="Attribute" uid="5c3e4981-cca6-4316-b891-3267a7c718e4"/>
+          <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[inputB_prime_inv_x1_x2_P2]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="inputA_x1_inv_x2_x3_P1" mc="Attribute" uid="bdb24f06-b228-4b2f-a10c-5259dffc68f7"/>
+          <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[inputA_x1_inv_x2_x3_P1]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="neg_inv_x1_x2_P2" mc="Attribute" uid="3d977db8-3901-4d17-bcaf-16c01a28164d"/>
+          <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[neg_inv_x1_x2_P2]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="neg_x1P1" mc="Attribute" uid="2c21067d-0636-4fac-9a2c-4f4c1b9f85fb"/>
+          <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[neg_x1P1]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="inputB_inv_x1_x4_P2" mc="Attribute" uid="408d5719-f2f4-45ce-8aad-6282dfe62c28"/>
+          <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[inputB_inv_x1_x4_P2]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="alpha" mc="Attribute" uid="f5ec1021-e2db-4779-b7dd-a1d0d47b4276"/>
+          <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[new Element[4]]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[alpha]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="TaggedValue" uid="b9d4513f-5904-4a33-a9ca-57550dead6ad"/>
+                <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="TagParameter" uid="caacee79-c580-423c-b800-63ea80dcbfc3"/>
+                      <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[Array]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3765-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="alpha_prime" mc="Attribute" uid="467e115c-d623-4d0d-aa3e-8e6186738424"/>
+          <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[new Element[4]]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[alpha_prime]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="TaggedValue" uid="de1d73af-d947-4c2c-a26f-acd19df2f40d"/>
+                <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="TagParameter" uid="3e28791f-96b2-4d00-983a-148a41d6c9ce"/>
+                      <PID name="TZR2PairingOutsource" mc="Class" uid="eb961d45-a378-428f-8fe7-819707b1bf73"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[Array]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3765-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
           </DEPENDENCIES>
         </OBJECT>
       </COMP>
