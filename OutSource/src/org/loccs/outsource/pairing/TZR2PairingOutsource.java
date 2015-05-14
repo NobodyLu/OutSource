@@ -13,6 +13,14 @@ public class TZR2PairingOutsource extends SymmetricPrimeOrderPairingOutsource {
 
     protected RandTuple x_prime;
 
+    protected Element inputA_x1P1;
+
+    protected Element inputB_inv_x1_x2_P2;
+
+    protected Element tA_prime_x1_inv_x2_x3_P1;
+
+    protected BigInteger t = new BigInteger("3");
+
     public TZR2PairingOutsource(int rbits, int qbits) {
 //begin of modifiable zone................T/88e38269-f123-49ab-970f-cc33038fe2cc
 super(rbits, qbits);
@@ -40,6 +48,9 @@ super(rbits, qbits);
 //begin of modifiable zone................T/f0a2b8a8-bb44-43bc-b86a-d1e79afbb78a
         if (nextStep.equals(""))
             return rand();
+        
+        if (nextStep.equals("TQuery"))
+            return tQuery();
 //end of modifiable zone..................E/f0a2b8a8-bb44-43bc-b86a-d1e79afbb78a
 //begin of modifiable zone................T/ff013592-eb61-4e15-bd4a-b5ebcee37194
         return new StepInformation("TP", "", true, false);
@@ -56,6 +67,17 @@ super(rbits, qbits);
 //begin of modifiable zone................T/c8b0eb9f-2dc5-40cb-98a4-4e86b93e6336
         return new StepInformation("TP", "TQuery", false, false);
 //end of modifiable zone..................E/c8b0eb9f-2dc5-40cb-98a4-4e86b93e6336
+    }
+
+    protected StepInformation tQuery() {
+//begin of modifiable zone................T/9ae0eabf-70d6-475e-afef-df27412ad5e6
+        inputA_x1P1 = inputA.duplicate().add(x.getX1P1());
+        inputB_inv_x1_x2_P2 = inputB.duplicate().add(x.getInvX1X2P2());
+        tA_prime_x1_inv_x2_x3_P1 = inputA.duplicate().mul(t).add(x_prime.getX1InvX2X3P1());
+//end of modifiable zone..................E/9ae0eabf-70d6-475e-afef-df27412ad5e6
+//begin of modifiable zone................T/c51578ff-51a9-4b2d-937d-efa863969120
+        return new StepInformation("T", "U1Response", false, true);
+//end of modifiable zone..................E/c51578ff-51a9-4b2d-937d-efa863969120
     }
 
     /**
@@ -82,7 +104,7 @@ super(rbits, qbits);
 //begin of modifiable zone(JavaSuper).....C/a5cdce40-4dbb-406d-a5ba-3eb4eaa839a6
 
 //end of modifiable zone(JavaSuper).......E/a5cdce40-4dbb-406d-a5ba-3eb4eaa839a6
-//begin of modifiable zone................T/87f56b4f-538a-408f-86a4-9c49a06ad57c
+//begin of modifiable zone................T/4487870f-6e11-4225-928f-7a5d28a23318
             for (int i = 1; i <= 4; i++) 
                 x[i] = randomNumber(order);
             
@@ -91,52 +113,52 @@ super(rbits, qbits);
             e[2] = P2.duplicate().mul(x[1].modInverse(order)).mul(x[2]);
             e[3] = P2.duplicate().mul(x[1].modInverse(order)).mul(x[4]);
             e[4] = pairing.pairing(P1, P2).pow(x[3].add(x[4]).subtract(x[2]));
-//end of modifiable zone..................E/87f56b4f-538a-408f-86a4-9c49a06ad57c
+//end of modifiable zone..................E/4487870f-6e11-4225-928f-7a5d28a23318
         }
 
         public Element getX1P1() {
 //begin of modifiable zone(JavaCode)......C/0a56f6c4-43e5-4225-8664-96a398f9106d
 
 //end of modifiable zone(JavaCode)........E/0a56f6c4-43e5-4225-8664-96a398f9106d
-//begin of modifiable zone................T/eab4fedf-0633-4e90-8573-8e114072fde0
+//begin of modifiable zone................T/4181622d-b46e-4276-9d9a-cec0f17ec4c1
             return e[0];
-//end of modifiable zone..................E/eab4fedf-0633-4e90-8573-8e114072fde0
+//end of modifiable zone..................E/4181622d-b46e-4276-9d9a-cec0f17ec4c1
         }
 
         public Element getX1InvX2X3P1() {
 //begin of modifiable zone(JavaCode)......C/7725fcae-bc06-4acb-b763-5ec79965fd77
 
 //end of modifiable zone(JavaCode)........E/7725fcae-bc06-4acb-b763-5ec79965fd77
-//begin of modifiable zone................T/8445d79e-f8ec-4acc-9278-f7869a7818ad
+//begin of modifiable zone................T/d6a1d1f3-cde0-42ee-8a6c-648aa7518848
             return e[1];
-//end of modifiable zone..................E/8445d79e-f8ec-4acc-9278-f7869a7818ad
+//end of modifiable zone..................E/d6a1d1f3-cde0-42ee-8a6c-648aa7518848
         }
 
         public Element getInvX1X2P2() {
 //begin of modifiable zone(JavaCode)......C/2a8e9b63-24f2-410b-bf1d-742299756688
 
 //end of modifiable zone(JavaCode)........E/2a8e9b63-24f2-410b-bf1d-742299756688
-//begin of modifiable zone................T/0c57ea97-8116-4ddd-b0d5-72facd1bf7e4
+//begin of modifiable zone................T/93cff7ec-f8fe-4942-9697-71987418c768
             return e[2];
-//end of modifiable zone..................E/0c57ea97-8116-4ddd-b0d5-72facd1bf7e4
+//end of modifiable zone..................E/93cff7ec-f8fe-4942-9697-71987418c768
         }
 
         public Element getInvX1X4P2() {
 //begin of modifiable zone(JavaCode)......C/22212cf7-f506-44c2-9a83-fb4e842e84db
 
 //end of modifiable zone(JavaCode)........E/22212cf7-f506-44c2-9a83-fb4e842e84db
-//begin of modifiable zone................T/8a1e0342-01b8-49d5-8b8b-dd8ac79b4e21
+//begin of modifiable zone................T/883240d5-2d82-4bb1-9946-54b1507afd03
             return e[3];
-//end of modifiable zone..................E/8a1e0342-01b8-49d5-8b8b-dd8ac79b4e21
+//end of modifiable zone..................E/883240d5-2d82-4bb1-9946-54b1507afd03
         }
 
         public Element getPair() {
 //begin of modifiable zone(JavaCode)......C/1a0e9920-7bc3-4c45-b577-0b58def8ccac
 
 //end of modifiable zone(JavaCode)........E/1a0e9920-7bc3-4c45-b577-0b58def8ccac
-//begin of modifiable zone................T/ba48b0d6-495f-498c-988d-98611f301b01
+//begin of modifiable zone................T/625fcfad-24d0-4b31-af23-949b25f07672
             return e[4];
-//end of modifiable zone..................E/ba48b0d6-495f-498c-988d-98611f301b01
+//end of modifiable zone..................E/625fcfad-24d0-4b31-af23-949b25f07672
         }
 
     }

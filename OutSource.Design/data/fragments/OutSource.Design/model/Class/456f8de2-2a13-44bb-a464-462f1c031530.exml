@@ -5,6 +5,8 @@
     <EXTID name="BigInteger" mc="Class" uid="d14dd6ce-4449-4cb8-958e-1ccb7e239b62"/>
     <EXTID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
     <FOREIGNID name="JavaClass" mc="Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
     <FOREIGNID name="create" mc="Stereotype" uid="00700680-0000-0204-0000-000000000000"/>
     <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3765-0000-000000000000"/>
   </DEPS>
@@ -89,6 +91,31 @@
             <LINK relation="Extension">
               <FOREIGNID name="create" mc="Stereotype" uid="00700680-0000-0204-0000-000000000000"/>
             </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="4487870f-6e11-4225-928f-7a5d28a23318"/>
+                <PID name="RandTuple" mc="Class" uid="456f8de2-2a13-44bb-a464-462f1c031530"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[for (int i = 1; i <= 4; i++) 
+    x[i] = randomNumber(order);
+
+e[0] = P1.duplicate().mul(x[1]);
+e[1] = P1.duplicate().mul(x[1]).mul(x[2].modInverse(order)).mul(x[3]);
+e[2] = P2.duplicate().mul(x[1].modInverse(order)).mul(x[2]);
+e[3] = P2.duplicate().mul(x[1].modInverse(order)).mul(x[4]);
+e[4] = pairing.pairing(P1, P2).pow(x[3].add(x[4]).subtract(x[2]));
+]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
@@ -126,6 +153,23 @@
                 <DEPENDENCIES>
                   <LINK relation="Type">
                     <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="4181622d-b46e-4276-9d9a-cec0f17ec4c1"/>
+                <PID name="RandTuple" mc="Class" uid="456f8de2-2a13-44bb-a464-462f1c031530"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return e[0];]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -171,6 +215,23 @@
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="d6a1d1f3-cde0-42ee-8a6c-648aa7518848"/>
+                <PID name="RandTuple" mc="Class" uid="456f8de2-2a13-44bb-a464-462f1c031530"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return e[1];]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
@@ -208,6 +269,23 @@
                 <DEPENDENCIES>
                   <LINK relation="Type">
                     <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="93cff7ec-f8fe-4942-9697-71987418c768"/>
+                <PID name="RandTuple" mc="Class" uid="456f8de2-2a13-44bb-a464-462f1c031530"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return e[2];]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -253,6 +331,23 @@
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="883240d5-2d82-4bb1-9946-54b1507afd03"/>
+                <PID name="RandTuple" mc="Class" uid="456f8de2-2a13-44bb-a464-462f1c031530"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return e[3];]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
@@ -290,6 +385,23 @@
                 <DEPENDENCIES>
                   <LINK relation="Type">
                     <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="625fcfad-24d0-4b31-af23-949b25f07672"/>
+                <PID name="RandTuple" mc="Class" uid="456f8de2-2a13-44bb-a464-462f1c031530"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return e[4];]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
