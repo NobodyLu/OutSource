@@ -19,6 +19,8 @@ public class BJNPairingOutsource extends SymmetricPrimeOrderPairingOutsource {
 
     protected Element[] alpha = new Element[4];
 
+    protected Element pairing_A_B;
+
     public BJNPairingOutsource(int rbits, int qbits) {
 //begin of modifiable zone................T/7393fc04-5c94-456a-92c5-802033edf26d
 super(rbits, qbits);
@@ -52,6 +54,9 @@ super(rbits, qbits);
         if (nextStep.equals("UResponse"))
             return uResponse();
         
+        if (nextStep.equals("TVerify"))
+            return tVerify();
+        
 //end of modifiable zone..................E/d2e30feb-9c69-43cc-8369-a688e3d2fa51
 //begin of modifiable zone................T/9bba7abc-eacb-49d6-a064-6e6c6b4845d5
         return new StepInformation("TP", "", true, false);
@@ -75,8 +80,8 @@ super(rbits, qbits);
             g[i] = randomNumber(order);
         
         inputA_g1P1 = P[1].duplicate().mul(g[1]);
-        //inputA_g1P1 = inputA.duplicate().add(P[1].duplicate().mul(g[1]));
-        //inputB_g2P2 = inputB.duplicate().add(P[2].duplicate().mul(g[2]));
+        inputA_g1P1 = inputA.duplicate().add(P[1].duplicate().mul(g[1]));
+        inputB_g2P2 = inputB.duplicate().add(P[2].duplicate().mul(g[2]));
 //end of modifiable zone..................E/d90dd158-b1a4-457e-9cdc-e6e32461109b
 //begin of modifiable zone................T/bd92b6d3-fdec-4870-b8f0-e00371d40118
         return new StepInformation("T", "UResponse", false, true);
@@ -85,13 +90,22 @@ super(rbits, qbits);
 
     protected StepInformation uResponse() {
 //begin of modifiable zone................T/5b8f28c9-32f6-4ca0-9800-fc7b26abf1ad
-    	alpha[1] = pairing.pairing(inputA_g1P1, P[2]);
-    	//alpha[2] = pairing.pairing(P[1], inputB_g2P2);
-    	//alpha[3] = pairing.pairing(inputA_g1P1, inputB_g2P2);
+        alpha[1] = pairing.pairing(inputA_g1P1, P[2]);
+        alpha[2] = pairing.pairing(P[1], inputB_g2P2);
+        alpha[3] = pairing.pairing(inputA_g1P1, inputB_g2P2);
 //end of modifiable zone..................E/5b8f28c9-32f6-4ca0-9800-fc7b26abf1ad
 //begin of modifiable zone................T/ff784b18-4626-4e0a-ae06-f7fd3e57e0bc
-        return new StepInformation("U", "TQuery2", false, true);
+        return new StepInformation("U", "TVerify", false, true);
 //end of modifiable zone..................E/ff784b18-4626-4e0a-ae06-f7fd3e57e0bc
+    }
+
+    protected StepInformation tVerify() {
+//begin of modifiable zone................T/eba5afb6-320c-4f71-bb6d-a128feed27fb
+
+//end of modifiable zone..................E/eba5afb6-320c-4f71-bb6d-a128feed27fb
+//begin of modifiable zone................T/3e06a8c5-41bd-47dd-9b26-bbeada669fea
+        return new StepInformation("T", "UResponse2", false, true);
+//end of modifiable zone..................E/3e06a8c5-41bd-47dd-9b26-bbeada669fea
     }
 
     /**
