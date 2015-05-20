@@ -285,6 +285,15 @@ entities.add("U");
 
 if (nextStep.equals("TQuery"))
     return tQuery();
+
+if (nextStep.equals("UResponse"))
+    return uResponse();
+       
+if (nextStep.equals("TVerify"))
+    return tVerify();       
+
+if (nextStep.equals("UResponse2"))
+    return uResponse2();
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
@@ -437,8 +446,9 @@ pair_P1_P2 = pairing.pairing(P[1], P[2]);
                   <ATT name="Content"><![CDATA[for (int i = 1; i <= 2; i++)
     g[i] = randomNumber(order);
 
+inputA_g1P1 = P[1].duplicate().mul(g[1]);
 inputA_g1P1 = inputA.duplicate().add(P[1].duplicate().mul(g[1]));
-inputB_g2P2 = inputB.duplicate().add(P[2].mul(g[2]));
+inputB_g2P2 = inputB.duplicate().add(P[2].duplicate().mul(g[2]));
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
@@ -497,10 +507,9 @@ inputB_g2P2 = inputB.duplicate().add(P[2].mul(g[2]));
                 <ID name="" mc="Note" uid="5b8f28c9-32f6-4ca0-9800-fc7b26abf1ad"/>
                 <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[alpha[1] = pairing.pairing(inputA_v1V1, inputB_v2V2);
-alpha[0] = pairing.pairing(v1V1_v2V1, v.getE2());
-lambdaX1 = pairing.pairing(x.gete1E1(), x.gete2E2());
-lambdaY1 = pairing.pairing(y.gete1E1(), y.gete2E2());
+                  <ATT name="Content"><![CDATA[alpha[1] = pairing.pairing(inputA_g1P1, P[2]);
+alpha[2] = pairing.pairing(P[1], inputB_g2P2);
+alpha[3] = pairing.pairing(inputA_g1P1, inputB_g2P2);
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
@@ -516,7 +525,7 @@ lambdaY1 = pairing.pairing(y.gete1E1(), y.gete2E2());
                 <ID name="" mc="Note" uid="ff784b18-4626-4e0a-ae06-f7fd3e57e0bc"/>
                 <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return new StepInformation("U1", "U2Response", false, true);]]></ATT>
+                  <ATT name="Content"><![CDATA[return new StepInformation("U", "TVerify", false, true);]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -574,12 +583,24 @@ lambdaY1 = pairing.pairing(y.gete1E1(), y.gete2E2());
                 <ID name="" mc="Note" uid="eba5afb6-320c-4f71-bb6d-a128feed27fb"/>
                 <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[Element outsourceResult = alpha[1].duplicate().mul(alpha[2].duplicate().invert())
-        .mul(alpha[3].duplicate().invert()).mul(v.getPair().duplicate().invert())
-        .mul(alpha[0]);
+                  <ATT name="Content"><![CDATA[for (int i = 1; i <= 3; i++)
+    if (!alpha[i].duplicate().pow(order).equals(pairing.getGT().newOneElement()))
+        System.out.println("Fail to verify alpha " + i);
 
-if (!outsourceResult.isEqual(result))
-    System.out.println("Incorrect outsource result.");
+pair_A_B = alpha[1].duplicate().pow(g[2].negate())
+        .mul(alpha[2].duplicate().pow(g[1].negate()))
+        .mul(alpha[3])
+        .mul(pair_P1_P2.duplicate().pow(g[1].multiply(g[2])));
+
+for (int i = 1; i <= 2; i++) {
+    a[i] = randomNumber(order);
+    r[i] = randomNumber(order);
+}
+
+a1_inputA_r1_P1 = inputA.duplicate().mul(a[1])
+        .add(P[1].duplicate().mul(r[1]));
+a2_inputB_r2_P2 = inputB.duplicate().mul(a[2])
+        .add(P[2].duplicate().mul(r[2]));
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
@@ -595,7 +616,7 @@ if (!outsourceResult.isEqual(result))
                 <ID name="" mc="Note" uid="3e06a8c5-41bd-47dd-9b26-bbeada669fea"/>
                 <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return new StepInformation("T", "", true, true);]]></ATT>
+                  <ATT name="Content"><![CDATA[return new StepInformation("T", "UResponse2", false, true);]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -603,6 +624,120 @@ if (!outsourceResult.isEqual(result))
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="uResponse2" mc="Operation" uid="ff7d4311-d465-4dd9-8f43-f90f1b82445f"/>
+          <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[uResponse2]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="3108f475-9dd7-44f1-921f-311ddc469d1f"/>
+                <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="0d7b4470-6002-4c97-b333-e2d9fbe2ed2c"/>
+                <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[alpha[4] = pairing.pairing(a1_inputA_r1_P1, a2_inputB_r2_P2);]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="88ffc4ab-71ef-4690-8d88-17fa8d9558ac"/>
+                <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return new StepInformation("U", "TCompute", false, true);]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="tCompute" mc="Operation" uid="75fae6f7-4664-4a07-87e0-e4f9640f35d3"/>
+          <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[tCompute]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="6de6f560-3191-4c67-9edc-af9f9386a259"/>
+                <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -698,7 +833,7 @@ if (!outsourceResult.isEqual(result))
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[BJNPairingOutsource outsource = new BJNPairingOutsource(160, 512);
 
-outsource.setRepeat(10);
+outsource.setRepeat(1);
 
 //outsource.direct();
 
@@ -901,7 +1036,7 @@ outsource.evaluate();
           <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
-            <ATT name="Value"><![CDATA[new Element[4]]]></ATT>
+            <ATT name="Value"><![CDATA[new Element[5]]]></ATT>
             <ATT name="TargetIsClass">false</ATT>
             <ATT name="Changeable">AccesNone</ATT>
             <ATT name="IsDerived">false</ATT>
@@ -948,7 +1083,7 @@ outsource.evaluate();
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="pairing_A_B" mc="Attribute" uid="0d177bd9-5b49-458c-ad76-519789ad242b"/>
+          <ID name="pair_A_B" mc="Attribute" uid="0d177bd9-5b49-458c-ad76-519789ad242b"/>
           <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
           <ATTRIBUTES>
             <ATT name="TypeConstraint"></ATT>
@@ -963,7 +1098,218 @@ outsource.evaluate();
             <ATT name="Visibility">Protected</ATT>
             <ATT name="IsClass">false</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[pairing_A_B]]></ATT>
+            <ATT name="Name"><![CDATA[pair_A_B]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="8a9abdcb-fb76-49ca-a144-07f8e1d4ba05"/>
+                <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[<Enter note text here>]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="a" mc="Attribute" uid="f8c6c96b-055d-4c6c-b9dd-5a447b7f93d3"/>
+          <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[new BigInteger[3]]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[a]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="BigInteger" mc="Class" uid="d14dd6ce-4449-4cb8-958e-1ccb7e239b62"/>
+            </LINK>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="TaggedValue" uid="3c2ac917-6fdd-4ed4-a5ba-ebfda1574c43"/>
+                <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="TagParameter" uid="246a1325-0b9e-4b28-8cac-3c2e21bfe4fb"/>
+                      <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[Array]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3765-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="r" mc="Attribute" uid="11885427-5022-4db6-99a5-727a1a571d6f"/>
+          <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[new BigInteger[3]]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[r]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="BigInteger" mc="Class" uid="d14dd6ce-4449-4cb8-958e-1ccb7e239b62"/>
+            </LINK>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="TaggedValue" uid="041ea6ec-882f-4d87-bc42-b5a67402b95a"/>
+                <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="TagParameter" uid="85fff2bd-b1a2-42b9-bacf-91dc7bab2f7c"/>
+                      <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[Array]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3765-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="a1_inputA_r1_P1" mc="Attribute" uid="207e3dbf-e84b-4cfc-a1c7-4dd0679715a0"/>
+          <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[a1_inputA_r1_P1]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="5c3ae8a7-3bed-474c-b974-7cb24ae1b9f6"/>
+                <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="description" mc="NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="a2_inputB_r2_P2" mc="Attribute" uid="0f83e8a5-411c-44a5-a273-d2639a0d85f1"/>
+          <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[a2_inputB_r2_P2]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="alpha4_prime" mc="Attribute" uid="8efd6874-2a3e-47b2-8e91-72931e185ea8"/>
+          <PID name="BJNPairingOutsource" mc="Class" uid="4dd564cd-9a3d-47bc-bdce-d8e2a7410a18"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[alpha4_prime]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>

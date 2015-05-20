@@ -3,7 +3,9 @@ package org.loccs.outsource.pairing;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Vector;
+
 import it.unisa.dia.gas.jpbc.Element;
+
 import org.loccs.outsource.StepInformation;
 
 public class BJNPairingOutsource extends SymmetricPrimeOrderPairingOutsource {
@@ -17,9 +19,22 @@ public class BJNPairingOutsource extends SymmetricPrimeOrderPairingOutsource {
 
     protected Element inputB_g2P2;
 
-    protected Element[] alpha = new Element[4];
+    protected Element[] alpha = new Element[5];
 
-    protected Element pairing_A_B;
+    /**
+     * <Enter note text here>
+     */
+    protected Element pair_A_B;
+
+    protected BigInteger[] a = new BigInteger[3];
+
+    protected BigInteger[] r = new BigInteger[3];
+
+    protected Element a1_inputA_r1_P1;
+
+    protected Element a2_inputB_r2_P2;
+
+    protected Element alpha4_prime;
 
     public BJNPairingOutsource(int rbits, int qbits) {
 //begin of modifiable zone................T/7393fc04-5c94-456a-92c5-802033edf26d
@@ -53,10 +68,15 @@ super(rbits, qbits);
         
         if (nextStep.equals("UResponse"))
             return uResponse();
-        
+               
         if (nextStep.equals("TVerify"))
-            return tVerify();
+            return tVerify();       
         
+        if (nextStep.equals("UResponse2"))
+            return uResponse2();
+        
+        if (nextStep.equals("TCompute"))
+            return tCompute();          
 //end of modifiable zone..................E/d2e30feb-9c69-43cc-8369-a688e3d2fa51
 //begin of modifiable zone................T/9bba7abc-eacb-49d6-a064-6e6c6b4845d5
         return new StepInformation("TP", "", true, false);
@@ -79,7 +99,6 @@ super(rbits, qbits);
         for (int i = 1; i <= 2; i++)
             g[i] = randomNumber(order);
         
-        inputA_g1P1 = P[1].duplicate().mul(g[1]);
         inputA_g1P1 = inputA.duplicate().add(P[1].duplicate().mul(g[1]));
         inputB_g2P2 = inputB.duplicate().add(P[2].duplicate().mul(g[2]));
 //end of modifiable zone..................E/d90dd158-b1a4-457e-9cdc-e6e32461109b
@@ -101,11 +120,58 @@ super(rbits, qbits);
 
     protected StepInformation tVerify() {
 //begin of modifiable zone................T/eba5afb6-320c-4f71-bb6d-a128feed27fb
-
+        for (int i = 1; i <= 3; i++)
+            if (!alpha[i].duplicate().pow(order).equals(pairing.getGT().newOneElement()))
+                System.out.println("Fail to verify alpha " + i);
+        
+        pair_A_B = alpha[1].duplicate().pow(g[2].negate())
+                .mul(alpha[2].duplicate().pow(g[1].negate()))
+                .mul(alpha[3])
+                .mul(pair_P1_P2.duplicate().pow(g[1].multiply(g[2])));
+        
+        for (int i = 1; i <= 2; i++) {
+            a[i] = randomNumber(order);
+            r[i] = randomNumber(order);
+        }
+        
+        a1_inputA_r1_P1 = inputA.duplicate().mul(a[1])
+                .add(P[1].duplicate().mul(r[1]));
+        a2_inputB_r2_P2 = inputB.duplicate().mul(a[2])
+                .add(P[2].duplicate().mul(r[2]));
 //end of modifiable zone..................E/eba5afb6-320c-4f71-bb6d-a128feed27fb
 //begin of modifiable zone................T/3e06a8c5-41bd-47dd-9b26-bbeada669fea
         return new StepInformation("T", "UResponse2", false, true);
 //end of modifiable zone..................E/3e06a8c5-41bd-47dd-9b26-bbeada669fea
+    }
+
+    protected StepInformation uResponse2() {
+//begin of modifiable zone................T/0d7b4470-6002-4c97-b333-e2d9fbe2ed2c
+        alpha[4] = pairing.pairing(a1_inputA_r1_P1, a2_inputB_r2_P2);
+//end of modifiable zone..................E/0d7b4470-6002-4c97-b333-e2d9fbe2ed2c
+//begin of modifiable zone................T/88ffc4ab-71ef-4690-8d88-17fa8d9558ac
+        return new StepInformation("U", "TCompute", false, true);
+//end of modifiable zone..................E/88ffc4ab-71ef-4690-8d88-17fa8d9558ac
+    }
+
+    public StepInformation tCompute() {
+//begin of modifiable zone(JavaCode)......C/75fae6f7-4664-4a07-87e0-e4f9640f35d3
+    	alpha4_prime = pair_A_B.duplicate().pow(a[1].multiply(a[2]))
+    			.mul(alpha[1].duplicate().pow(a[1].multiply(r[2])))
+    			.mul(alpha[2].duplicate().pow(a[2].multiply(r[1])))
+    			.mul(pair_P1_P2.duplicate().pow(r[1].multiply(r[2])
+    					.subtract(a[1].multiply(g[1]).multiply(r[2]))
+    					.subtract(a[2].multiply(g[2]).multiply(r[1]))
+    					));
+    	
+    	if (!alpha[4].equals(alpha4_prime))
+    		System.out.println("Fail to vefiry.");
+    	
+        if (!pair_A_B.isEqual(result))
+            System.out.println("Incorrect outsource result.");    	
+//end of modifiable zone(JavaCode)........E/75fae6f7-4664-4a07-87e0-e4f9640f35d3
+//begin of modifiable zone(JavaReturned)..C/75fae6f7-4664-4a07-87e0-e4f9640f35d3
+    	return new StepInformation("T", "", true, true);
+//end of modifiable zone(JavaReturned)....E/75fae6f7-4664-4a07-87e0-e4f9640f35d3
     }
 
     /**
