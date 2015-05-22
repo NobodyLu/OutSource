@@ -124,8 +124,8 @@ super(rbits, qbits);
             if (!alpha[i].duplicate().pow(order).equals(pairing.getGT().newOneElement()))
                 System.out.println("Fail to verify alpha " + i);
         
-        pair_A_B = alpha[1].duplicate().pow(g[2].negate())
-                .mul(alpha[2].duplicate().pow(g[1].negate()))
+        pair_A_B = alpha[1].duplicate().pow(g[2].negate().mod(order))
+                .mul(alpha[2].duplicate().pow(g[1].negate().mod(order)))
                 .mul(alpha[3])
                 .mul(pair_P1_P2.duplicate().pow(g[1].multiply(g[2])));
         
@@ -161,6 +161,7 @@ super(rbits, qbits);
     			.mul(pair_P1_P2.duplicate().pow(r[1].multiply(r[2])
     					.subtract(a[1].multiply(g[1]).multiply(r[2]))
     					.subtract(a[2].multiply(g[2]).multiply(r[1]))
+    					.mod(order)
     					));
     	
     	if (!alpha[4].equals(alpha4_prime))
@@ -181,7 +182,7 @@ super(rbits, qbits);
 //begin of modifiable zone................T/6e3e3d12-7516-46f7-bb2a-9b538f898770
         BJNPairingOutsource outsource = new BJNPairingOutsource(160, 512);
         
-        outsource.setRepeat(1);
+        outsource.setRepeat(10);
         
         //outsource.direct();
         
