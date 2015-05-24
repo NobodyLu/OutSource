@@ -1,4 +1,11 @@
-package org.loccs.outsource.pairing;
+package org.loccs.outsource.pairing.test;
+
+import org.loccs.outsource.pairing.BJNPairingOutsource;
+import org.loccs.outsource.pairing.PairPairingOutsource;
+import org.loccs.outsource.pairing.Ren201504PairingOutsource;
+import org.loccs.outsource.pairing.SymmetricPrimeOrderPairingOutsource;
+import org.loccs.outsource.pairing.TZR1PairingOutsource;
+import org.loccs.outsource.pairing.TZR2PairingOutsource;
 
 public class Ren201504SinglePairingEvaluation {
 	

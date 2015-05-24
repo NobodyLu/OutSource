@@ -59,7 +59,7 @@ public abstract class MultipleSymmetricPrimeOrderPairingOutsource extends Pairin
 
     protected void compute() {
 //begin of modifiable zone................T/ac334763-a125-4fee-9c38-5ada84d01868
-        pairing.pairing(inputA, inputB);
+    	result = pairing.pairing(inputA, inputB);
 //end of modifiable zone..................E/ac334763-a125-4fee-9c38-5ada84d01868
     }
 
