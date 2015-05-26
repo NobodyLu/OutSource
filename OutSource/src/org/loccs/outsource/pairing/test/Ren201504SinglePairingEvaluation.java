@@ -2,6 +2,7 @@ package org.loccs.outsource.pairing.test;
 
 import org.loccs.outsource.pairing.BJNPairingOutsource;
 import org.loccs.outsource.pairing.PairPairingOutsource;
+import org.loccs.outsource.pairing.PairingArithmeticEvaluationOutsource;
 import org.loccs.outsource.pairing.Ren201504PairingOutsource;
 import org.loccs.outsource.pairing.SymmetricPrimeOrderPairingOutsource;
 import org.loccs.outsource.pairing.TZR1PairingOutsource;
@@ -30,6 +31,8 @@ public class Ren201504SinglePairingEvaluation {
 			outsource = new TZR1PairingOutsource(rbits, qbits);
 		else if (args[0].equals("TZR2"))
 			outsource = new TZR2PairingOutsource(rbits, qbits);
+		else if (args[0].equals("Simple"))
+			outsource = new PairingArithmeticEvaluationOutsource(rbits, qbits);
 		else 
 			return;
 		

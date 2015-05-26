@@ -102,27 +102,28 @@ public class VMBPPairingOutsource extends MultipleSymmetricPrimeOrderPairingOuts
         inputA_a0P1_a1P1 = new Element[pairingCount];
         inputB_b0P2_b1P2 = new Element[pairingCount];
         
-        sigma_inputA_a0P1_a3P1 = a13.getA2P1().duplicate();
-        sigma_inputB_b0P2_b3P2 = a13.getB2P2().duplicate();
-        sigma_inputA_a0P1_a2P1 = a02.getA2P1().duplicate();
-        sigma_inputB_b0P2_b2P2 = a02.getB2P2().duplicate();
-        
         Element temp1 = a13.getA0P1().duplicate().sub(a02.getA0P1());
         Element temp2 = a13.getB0P2().duplicate().sub(a02.getB0P2());
         
+        Element sum1 = pairing.getG1().newZeroElement();
+        Element sum2 = pairing.getG1().newZeroElement();
+        
         for (int i = 0; i < pairingCount; i++) {
             inputA_a0P1[i] = inputA[i].duplicate().sub(a02.getA0P1());
-            sigma_inputA_a0P1_a3P1.add(inputA_a0P1[i]);
+            sum1.add(inputA_a0P1[i]);
             
             inputB_b0P2[i] = inputB[i].duplicate().sub(a02.getB0P2());
-            sigma_inputB_b0P2_b3P2.add(inputB_b0P2[i]);
-            
-            sigma_inputA_a0P1_a2P1.add(inputA_a0P1[i]);
-            sigma_inputB_b0P2_b2P2.add(inputB_b0P2[i]);
-            
-            inputA_a0P1_a1P1[i] = inputA[i].duplicate().sub(a02.getA0P1()).add(a13.getA0P1());
-            inputB_b0P2_b1P2[i] = inputB[i].duplicate().sub(a02.getB0P2()).add(a13.getB0P2());
+            sum2.add(inputB_b0P2[i]);
+
+            inputA_a0P1_a1P1[i] = inputA[i].duplicate().add(temp1);
+            inputB_b0P2_b1P2[i] = inputB[i].duplicate().add(temp2);
         }
+        
+        sigma_inputA_a0P1_a3P1 = sum1.duplicate().add(a13.getA2P1());
+        sigma_inputB_b0P2_b3P2 = sum2.duplicate().add(a13.getB2P2());
+        sigma_inputA_a0P1_a2P1 = sum1.duplicate().add(a02.getA2P1());
+        sigma_inputB_b0P2_b2P2 = sum2.duplicate().add(a02.getB2P2());
+        
         return new StepInformation("T", "U1Response", false, true);
     }
 
