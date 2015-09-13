@@ -1,0 +1,975 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="PairingIBEScheme" version="3">
+  <DEPS>
+    <ID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+    <EXTID name="BigInteger" mc="Class" uid="d14dd6ce-4449-4cb8-958e-1ccb7e239b62"/>
+    <EXTID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+    <EXTID name="Outsource" mc="Class" uid="846d6945-babc-49e9-abee-fc45f03178c4"/>
+    <EXTID name="Pairing" mc="Interface" uid="5b3ac860-7a14-4870-8f78-7cb5d423cc81"/>
+    <EXTID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
+    <FOREIGNID name="JavaClass" mc="Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+    <FOREIGNID name="JavaImport" mc="TagType" uid="003800a8-0000-0155-0000-000000000000"/>
+    <FOREIGNID name="JavaNoInitValue" mc="TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+    <FOREIGNID name="JavaTypeExpr" mc="TagType" uid="00380080-0000-01a4-0000-000000000000"/>
+    <FOREIGNID name="JavaTypeExpr" mc="TagType" uid="003800a8-0000-0165-0000-000000000000"/>
+    <FOREIGNID name="create" mc="Stereotype" uid="00700680-0000-0204-0000-000000000000"/>
+    <FOREIGNID name="string" mc="DataType" uid="00000004-0000-000d-0000-000000000000"/>
+    <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3767-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+    <PID name="ibe" mc="Package" uid="06dd65a5-bf0e-43d3-9a0a-87c0757c674e"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">true</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[PairingIBEScheme]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedOperation">
+        <OBJECT>
+          <ID name="PairingIBEScheme" mc="Operation" uid="675d6237-17a4-4640-95ad-cfb18b09b186"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[PairingIBEScheme]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Extension">
+              <FOREIGNID name="create" mc="Stereotype" uid="00700680-0000-0204-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="compute" mc="Operation" uid="6851026e-9f69-45f2-94d5-153cc9bcf099"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[compute]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="decrypt" mc="Operation" uid="60e18258-5f19-4426-9df9-a56bfc06886c"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">true</ATT>
+            <ATT name="Name"><![CDATA[decrypt]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="decryptStep" mc="Operation" uid="aca1dccd-65df-4d1e-adf6-79e4cbcacf4f"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[decryptStep]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="123c9ab7-9946-42c4-95a1-0cecf87a2bb4"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="e296138b-53b3-453a-8e93-14940c47d921"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[decrypt();]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="2a6a238c-f804-47d1-8dc6-6e31ab6b8abc"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return new StepInformation("Decrypt", "KeyUpdate", false, true);]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="encrypt" mc="Operation" uid="65b97355-b052-42f8-9841-4a2d1799b4b1"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">true</ATT>
+            <ATT name="Name"><![CDATA[encrypt]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="encryptStep" mc="Operation" uid="90bcaa37-b9c5-4cd2-ab71-165e66276edf"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[encryptStep]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="a22aec53-b587-4c1d-98ad-5258d5252587"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="9f4b4cb2-3b58-4b70-a05d-5146c6594b73"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[encrypt();]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="6908393d-e0b5-43a7-9e42-42ee76f577f2"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return new StepInformation("Encrypt", "Decrypt", false, true);]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="getAllEntityNames" mc="Operation" uid="656b99e2-4cc7-47c2-bfc4-b179273deaa7"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[getAllEntityNames]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="74a02eb4-04e9-4b51-b657-3f321cdbe166"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="string" mc="DataType" uid="00000004-0000-000d-0000-000000000000"/>
+                  </LINK>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="TaggedValue" uid="78488f26-fe09-45ed-b530-9c18dfee8c8b"/>
+                      <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <COMP relation="Actual">
+                          <OBJECT>
+                            <ID name="" mc="TagParameter" uid="b6c61619-64c4-4f35-aaaa-4e14a6b54437"/>
+                            <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                            <ATTRIBUTES>
+                              <ATT name="Value"><![CDATA[List]]></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES></DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3767-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="98dd2cde-95b3-4921-a622-4e05f5d9fd6f"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Vector<String> entities = new Vector<String>();
+entities.add("Setup");
+entities.add("KeyGen");
+entities.add("Encrypt");
+entities.add("Decrypt");
+entities.add("KeyUpdate");
+]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="614619bd-786c-49b9-998a-bf98ed8543af"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return entities;]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="initialize" mc="Operation" uid="118c3d46-7a4d-44cc-8241-2c4e5e00075f"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[initialize]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="initializePairing" mc="Operation" uid="e0270b2d-96eb-4b3d-9120-2a955c3ab3db"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">true</ATT>
+            <ATT name="Name"><![CDATA[initializePairing]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="ebb11c4b-2571-497d-9cb1-ef314b777c75"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Pairing" mc="Interface" uid="5b3ac860-7a14-4870-8f78-7cb5d423cc81"/>
+                  </LINK>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="TaggedValue" uid="8698895d-b605-4830-ae3d-aef97ca8baaf"/>
+                      <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <COMP relation="Actual">
+                          <OBJECT>
+                            <ID name="" mc="TagParameter" uid="98facf4e-8c2a-4cdb-88c7-a1abbc1b0993"/>
+                            <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                            <ATTRIBUTES>
+                              <ATT name="Value"><![CDATA[Pairing]]></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES></DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaTypeExpr" mc="TagType" uid="00380080-0000-01a4-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="keygen" mc="Operation" uid="238bf21c-bd59-4bb6-aa72-8f2eead20ea0"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">true</ATT>
+            <ATT name="Name"><![CDATA[keygen]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="keygenStep" mc="Operation" uid="b89e541e-33ff-424f-bde7-70cea1eea088"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[keygenStep]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="911f4f39-1fcc-41c5-9b3f-bc98a3a01f2e"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="d133d0af-ba50-415a-811f-c4431bd1c326"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[keygen();]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="b8bda70d-ecbc-4299-b0f7-6b79acd9f0d1"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return new StepInformation("KeyGen", "Encrypt", false, false);]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="keyupdate" mc="Operation" uid="10845312-c967-408e-b815-1774b3c6ef15"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">true</ATT>
+            <ATT name="Name"><![CDATA[keyupdate]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="keyupdateStep" mc="Operation" uid="be0bd828-550b-4b3e-8c96-9e2c05ca7f3a"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[keyupdateStep]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="6cac140f-d544-46d7-8f7d-428f6ad0bd4d"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="ea1f4a0f-9f2f-47d5-812b-928507ff2a5f"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[keyupdate();]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="bb0d29a1-8e5e-417a-a8fe-70dbf5b3f25f"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return new StepInformation("KeyUpdate", "", true, true);]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="randomInput" mc="Operation" uid="b81fb50e-e736-42a2-82a8-9a942beb3c5e"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[randomInput]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="setupAfterPairingInitialized" mc="Operation" uid="d025dcba-0168-450e-8bf2-826a26f5ce9a"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">true</ATT>
+            <ATT name="Name"><![CDATA[setupAfterPairingInitialized]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="setupStep" mc="Operation" uid="f69cb03a-4297-4f7c-b15f-a059f5a68e8b"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[setupStep]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="50476b1e-d30b-452f-a0da-fa7a50125380"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="7fcd341d-b1a2-4b10-b32b-01251bfdf141"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return new StepInformation("Setup", "KeyGen", false, false);]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="c981286f-b892-443b-af24-5feba71070c9"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[pairing = initializePairing();
+setupAfterPairingInitialized();
+]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="step" mc="Operation" uid="b323cf67-a115-4217-88aa-fad5bf8cb91c"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[step]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="ec2f2c47-f15a-4066-b690-4d0827d7facf"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="4d71e1a7-3a79-4fc9-b110-ac930a39b528"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[if (nextStep.equals(""))
+    return setupStep();
+
+if (nextStep.equals("KeyGen"))
+    return keygenStep();  
+
+if (nextStep.equals("Encrypt"))
+    return encryptStep(); 
+
+if (nextStep.equals("Decrypt"))
+    return decryptStep();       
+
+if (nextStep.equals("KeyUpdate"))
+    return keyupdateStep();
+]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="310e0b56-fe6c-4eba-bc70-6baf941432a1"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return new StepInformation("Setup", "", true, false);]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedAttribute">
+        <OBJECT>
+          <ID name="g" mc="Attribute" uid="38aa2d96-7ad3-4a97-9b82-919e4476f694"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[g]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="order" mc="Attribute" uid="d2e960c6-830b-498c-9712-004794189e32"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[order]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="BigInteger" mc="Class" uid="d14dd6ce-4449-4cb8-958e-1ccb7e239b62"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="pairing" mc="Attribute" uid="76660050-e8f6-4f49-9cd3-ad251746d7d7"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[pairing]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Pairing" mc="Interface" uid="5b3ac860-7a14-4870-8f78-7cb5d423cc81"/>
+            </LINK>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="TaggedValue" uid="5b971724-e7f5-4836-98d8-e535aaeb665f"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="TagParameter" uid="bd82aaea-f6f5-430d-bd1c-c06eb83ac821"/>
+                      <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[Pairing]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaTypeExpr" mc="TagType" uid="003800a8-0000-0165-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="TaggedValue" uid="cad95ba3-539c-4cd6-a9cf-7b0fb48aa249"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaNoInitValue" mc="TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="99520cec-cf3c-4b73-a7da-c41dd8fc2fa9"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="Outsource" mc="Class" uid="846d6945-babc-49e9-abee-fc45f03178c4"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Tag">
+        <OBJECT>
+          <ID name="" mc="TaggedValue" uid="fd27409e-4975-4b74-a29f-7f4bc1db80da"/>
+          <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Actual">
+              <OBJECT>
+                <ID name="" mc="TagParameter" uid="b9f23111-dd1a-488e-adfd-5ade6d4c21af"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Value"><![CDATA[java.util.Vector]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="TagParameter" uid="ecfa6a66-1546-4fd6-b672-11c7ce16d631"/>
+                <PID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+                <ATTRIBUTES>
+                  <ATT name="Value"><![CDATA[it.unisa.dia.gas.jpbc.Pairing]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Definition">
+              <FOREIGNID name="JavaImport" mc="TagType" uid="003800a8-0000-0155-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

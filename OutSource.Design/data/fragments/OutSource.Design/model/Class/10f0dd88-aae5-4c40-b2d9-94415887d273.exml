@@ -1,0 +1,148 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Ren201509IBEScheme1" version="3">
+  <DEPS>
+    <ID name="Ren201509IBEScheme1" mc="Class" uid="10f0dd88-aae5-4c40-b2d9-94415887d273"/>
+    <EXTID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+    <FOREIGNID name="JavaClass" mc="Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+    <FOREIGNID name="JavaSuper" mc="NoteType" uid="003800a8-0000-018f-0000-000000000000"/>
+    <FOREIGNID name="create" mc="Stereotype" uid="00700680-0000-0204-0000-000000000000"/>
+    <FOREIGNID name="integer" mc="DataType" uid="00000004-0000-0009-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="Ren201509IBEScheme1" mc="Class" uid="10f0dd88-aae5-4c40-b2d9-94415887d273"/>
+    <PID name="ibe" mc="Package" uid="06dd65a5-bf0e-43d3-9a0a-87c0757c674e"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Ren201509IBEScheme1]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedOperation">
+        <OBJECT>
+          <ID name="Ren201509IBEScheme1" mc="Operation" uid="5137f929-a67f-4057-a974-0f9a31c54674"/>
+          <PID name="Ren201509IBEScheme1" mc="Class" uid="10f0dd88-aae5-4c40-b2d9-94415887d273"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[Ren201509IBEScheme1]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="primeCount" mc="Parameter" uid="72f894a0-0abe-4f76-8633-e858c0454467"/>
+                <PID name="Ren201509IBEScheme1" mc="Class" uid="10f0dd88-aae5-4c40-b2d9-94415887d273"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[primeCount]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="bitsize" mc="Parameter" uid="5a37451a-a2d7-4846-95f5-fe0ccebb653a"/>
+                <PID name="Ren201509IBEScheme1" mc="Class" uid="10f0dd88-aae5-4c40-b2d9-94415887d273"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[bitsize]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="create" mc="Stereotype" uid="00700680-0000-0204-0000-000000000000"/>
+            </LINK>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="96bbf9de-5a66-4233-ae48-5250167cf47a"/>
+                <PID name="Ren201509IBEScheme1" mc="Class" uid="10f0dd88-aae5-4c40-b2d9-94415887d273"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[super(primeCount, bitsize);]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaSuper" mc="NoteType" uid="003800a8-0000-018f-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="setupAfterPairingInitialized" mc="Operation" uid="69cb0ec6-5279-48f7-a87e-5ef036a233f7"/>
+          <PID name="Ren201509IBEScheme1" mc="Class" uid="10f0dd88-aae5-4c40-b2d9-94415887d273"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[setupAfterPairingInitialized]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="e02378d1-3419-49d6-9327-beae608deafc"/>
+          <PID name="Ren201509IBEScheme1" mc="Class" uid="10f0dd88-aae5-4c40-b2d9-94415887d273"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

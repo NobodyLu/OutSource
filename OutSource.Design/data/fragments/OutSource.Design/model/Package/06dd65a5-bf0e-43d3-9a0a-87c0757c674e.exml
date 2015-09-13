@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="ibe" version="3">
+  <DEPS>
+    <ID name="ibe" mc="Package" uid="06dd65a5-bf0e-43d3-9a0a-87c0757c674e"/>
+    <COMPID name="Class" mc="Class" uid="10f0dd88-aae5-4c40-b2d9-94415887d273"/>
+    <COMPID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+    <COMPID name="IBESchemeClassDiagram" mc="ClassDiagram" uid="57b3b25d-f8b7-43dc-b716-3e2b6a0df87e"/>
+    <COMPID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+    <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="ibe" mc="Package" uid="06dd65a5-bf0e-43d3-9a0a-87c0757c674e"/>
+    <PID name="outsource" mc="Package" uid="8b8e43d3-94ad-4a62-b79d-b5efe11aa73e"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[ibe]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
+        <COMPID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+        <COMPID name="Class" mc="Class" uid="10f0dd88-aae5-4c40-b2d9-94415887d273"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Product">
+        <COMPID name="IBESchemeClassDiagram" mc="ClassDiagram" uid="57b3b25d-f8b7-43dc-b716-3e2b6a0df87e"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
