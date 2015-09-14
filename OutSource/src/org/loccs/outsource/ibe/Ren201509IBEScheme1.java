@@ -32,7 +32,6 @@ public class Ren201509IBEScheme1 extends CompositeOrderPairingIBEScheme {
     public Ren201509IBEScheme1(int bitsize) {
 //begin of modifiable zone................T/96bbf9de-5a66-4233-ae48-5250167cf47a
     	super(3, bitsize);
-
 //end of modifiable zone..................E/96bbf9de-5a66-4233-ae48-5250167cf47a
 //begin of modifiable zone(JavaCode)......C/5137f929-a67f-4057-a974-0f9a31c54674
 
@@ -113,7 +112,7 @@ public class Ren201509IBEScheme1 extends CompositeOrderPairingIBEScheme {
      */
     public static void main(String[] args) {
 //begin of modifiable zone................T/834701bb-1dcc-46e1-b8d6-ee68fb572b05
-    	Ren201509IBEScheme1 outsource = new Ren201509IBEScheme1(512);
+        Ren201509IBEScheme1 outsource = new Ren201509IBEScheme1(512);
         
         outsource.setRepeat(1);
         

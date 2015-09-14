@@ -47,29 +47,6 @@
           <DEPENDENCIES>
             <COMP relation="IO">
               <OBJECT>
-                <ID name="primeCount" mc="Parameter" uid="72f894a0-0abe-4f76-8633-e858c0454467"/>
-                <PID name="Ren201509IBEScheme1" mc="Class" uid="10f0dd88-aae5-4c40-b2d9-94415887d273"/>
-                <ATTRIBUTES>
-                  <ATT name="ParameterPassing">In</ATT>
-                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
-                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-                  <ATT name="TypeConstraint"></ATT>
-                  <ATT name="DefaultValue"></ATT>
-                  <ATT name="IsOrdered">false</ATT>
-                  <ATT name="IsUnique">false</ATT>
-                  <ATT name="IsException">false</ATT>
-                  <ATT name="IsStream">false</ATT>
-                  <ATT name="Effect">ReadEffect</ATT>
-                  <ATT name="Name"><![CDATA[primeCount]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <LINK relation="Type">
-                    <FOREIGNID name="integer" mc="DataType" uid="00000004-0000-0009-0000-000000000000"/>
-                  </LINK>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
                 <ID name="bitsize" mc="Parameter" uid="5a37451a-a2d7-4846-95f5-fe0ccebb653a"/>
                 <PID name="Ren201509IBEScheme1" mc="Class" uid="10f0dd88-aae5-4c40-b2d9-94415887d273"/>
                 <ATTRIBUTES>
@@ -101,7 +78,7 @@
                 <ID name="" mc="Note" uid="96bbf9de-5a66-4233-ae48-5250167cf47a"/>
                 <PID name="Ren201509IBEScheme1" mc="Class" uid="10f0dd88-aae5-4c40-b2d9-94415887d273"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[super(primeCount, bitsize);]]></ATT>
+                  <ATT name="Content"><![CDATA[super(3, bitsize);]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -140,8 +117,8 @@ t2 = pairing.pairing(C[2], K[2]);
 t1.mul(C[0]);
 t1.div(t2);
 
-if (t1.isEqual(M))
-    System.out.println("decryption correct.");
+if (!t1.isEqual(M))
+    System.out.println("decryption incorrect.");
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
@@ -282,7 +259,10 @@ K[2].mul(R12);
                 <ID name="" mc="Note" uid="04ff9658-e4f9-4608-a297-d94d7138ca25"/>
                 <PID name="Ren201509IBEScheme1" mc="Class" uid="10f0dd88-aae5-4c40-b2d9-94415887d273"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[g1 = newRandomGpElement(1);
+                  <ATT name="Content"><![CDATA[gGp[1] = getGpGenerator(1);
+gGp[3] = getGpGenerator(3);
+
+g1 = newRandomGpElement(1);
 u = newRandomGpElement(1);
 h = newRandomGpElement(1);
 alpha = randomNumber(order);
@@ -389,9 +369,9 @@ e_g1_g1_alpha.pow(alpha);
                 <ID name="" mc="Note" uid="834701bb-1dcc-46e1-b8d6-ee68fb572b05"/>
                 <PID name="Ren201509IBEScheme1" mc="Class" uid="10f0dd88-aae5-4c40-b2d9-94415887d273"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[Ren201504PairingOutsource outsource = new Ren201504PairingOutsource(160, 512);
+                  <ATT name="Content"><![CDATA[Ren201509IBEScheme1 outsource = new Ren201509IBEScheme1(512);
 
-outsource.setRepeat(200);
+outsource.setRepeat(1);
 
 //outsource.direct();
 
