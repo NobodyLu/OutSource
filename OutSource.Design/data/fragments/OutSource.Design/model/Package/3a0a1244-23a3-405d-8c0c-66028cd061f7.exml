@@ -5,6 +5,7 @@
     <COMPID name="Collection" mc="Class" uid="7dd7a547-2094-405c-a5bd-7199c0623cf0"/>
     <COMPID name="HashMap" mc="Class" uid="5f588017-ca96-4883-b5b0-0f33863f3fa2"/>
     <COMPID name="HashSet" mc="Class" uid="e5dfc7e5-1705-4b7c-886f-a015e1e98dca"/>
+    <COMPID name="Hashtable" mc="Class" uid="9d702800-1e13-4a11-9ed9-98d6cacf6a5a"/>
     <COMPID name="List" mc="Class" uid="f56f919b-d979-4314-ba2b-81bc6cdf424c"/>
     <COMPID name="Map" mc="Interface" uid="c428a1d5-b9c4-443a-ab74-1cedd8531296"/>
     <COMPID name="Set" mc="Class" uid="b8ed0052-1731-4fa8-88fb-46ad718a3682"/>
@@ -37,6 +38,7 @@
         <COMPID name="HashSet" mc="Class" uid="e5dfc7e5-1705-4b7c-886f-a015e1e98dca"/>
         <COMPID name="Vector" mc="Class" uid="d6d21770-74d1-491e-b853-5066d38361d1"/>
         <COMPID name="Stack" mc="Class" uid="f558548a-7d6b-4ed2-9e28-33a26fc6a29c"/>
+        <COMPID name="Hashtable" mc="Class" uid="9d702800-1e13-4a11-9ed9-98d6cacf6a5a"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
