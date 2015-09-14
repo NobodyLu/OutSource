@@ -38,8 +38,7 @@ public class Ren201509IBEScheme3 extends CompositeOrderPairingIBEScheme {
 
     public Ren201509IBEScheme3(int bitsize) {
 //begin of modifiable zone................T/70bb637d-cd0e-4e64-9963-645f4428693a
-super(3, bitsize);
-
+    	super(3, bitsize);
 //end of modifiable zone..................E/70bb637d-cd0e-4e64-9963-645f4428693a
 //begin of modifiable zone................T/5288f45f-32a5-463c-a62d-976f4639367e
         
