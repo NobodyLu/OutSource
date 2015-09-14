@@ -9,6 +9,10 @@ import org.loccs.outsource.Outsource;
 import org.loccs.outsource.StepInformation;
 
 public abstract class PairingIBEScheme extends Outsource {
+    protected BigInteger ID;
+
+    protected Element M;
+
     protected Element g;
 
     protected BigInteger order;
@@ -45,6 +49,7 @@ public abstract class PairingIBEScheme extends Outsource {
 
     protected StepInformation encryptStep() {
 //begin of modifiable zone................T/9f4b4cb2-3b58-4b70-a05d-5146c6594b73
+    	M = randomMessage();
         encrypt();
 //end of modifiable zone..................E/9f4b4cb2-3b58-4b70-a05d-5146c6594b73
 //begin of modifiable zone................T/6908393d-e0b5-43a7-9e42-42ee76f577f2
@@ -66,6 +71,8 @@ public abstract class PairingIBEScheme extends Outsource {
 //end of modifiable zone..................E/614619bd-786c-49b9-998a-bf98ed8543af
     }
 
+    protected abstract Element getG1Generator();
+
     protected void initialize() {
 //begin of modifiable zone(JavaCode)......C/118c3d46-7a4d-44cc-8241-2c4e5e00075f
 
@@ -78,6 +85,7 @@ public abstract class PairingIBEScheme extends Outsource {
 
     protected StepInformation keygenStep() {
 //begin of modifiable zone................T/d133d0af-ba50-415a-811f-c4431bd1c326
+        ID = randomNumber(order);
         keygen();
 //end of modifiable zone..................E/d133d0af-ba50-415a-811f-c4431bd1c326
 //begin of modifiable zone................T/b8bda70d-ecbc-4299-b0f7-6b79acd9f0d1
@@ -102,11 +110,21 @@ public abstract class PairingIBEScheme extends Outsource {
 //end of modifiable zone(JavaCode)........E/b81fb50e-e736-42a2-82a8-9a942beb3c5e
     }
 
+    protected Element randomMessage() {
+//begin of modifiable zone(JavaCode)......C/6a1fd68a-de9f-4de5-9c0e-4e312034630a
+
+//end of modifiable zone(JavaCode)........E/6a1fd68a-de9f-4de5-9c0e-4e312034630a
+//begin of modifiable zone(JavaReturned)..C/6a1fd68a-de9f-4de5-9c0e-4e312034630a
+    	return pairing.getGT().newRandomElement();
+//end of modifiable zone(JavaReturned)....E/6a1fd68a-de9f-4de5-9c0e-4e312034630a
+    }
+
     protected abstract void setupAfterPairingInitialized();
 
     protected StepInformation setupStep() {
 //begin of modifiable zone................T/c981286f-b892-443b-af24-5feba71070c9
         pairing = initializePairing();
+        g = getG1Generator();
         order = pairing.getG1().getOrder();
         setupAfterPairingInitialized();
 //end of modifiable zone..................E/c981286f-b892-443b-af24-5feba71070c9

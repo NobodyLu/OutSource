@@ -3,6 +3,7 @@
   <DEPS>
     <ID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
     <EXTID name="BigInteger" mc="Class" uid="d14dd6ce-4449-4cb8-958e-1ccb7e239b62"/>
+    <EXTID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
     <EXTID name="Pairing" mc="Interface" uid="5b3ac860-7a14-4870-8f78-7cb5d423cc81"/>
     <EXTID name="PairingIBEScheme" mc="Class" uid="a035d005-bc7b-4367-a847-1f9defdd0c8c"/>
     <FOREIGNID name="JavaClass" mc="Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
@@ -118,6 +119,8 @@
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[this.primeCount = primeCount;
 this.bitsize = bitsize;
+p = new BigInteger[primeCount + 1];
+gGp = new Element[primeCount + 1];
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
@@ -126,6 +129,167 @@ this.bitsize = bitsize;
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="getG1Generator" mc="Operation" uid="ae55e50f-9e5b-46ec-a2f5-1b17c8107274"/>
+          <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[getG1Generator]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="6763735e-edde-4807-b70b-1b5dd8795e7e"/>
+                <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="e1f92669-ed2f-4d73-811f-1cb7862b7ccc"/>
+                <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return pairing.getG1().newRandomElement();]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="getGpGenerator" mc="Operation" uid="f13c32a3-8c79-40af-98aa-542d98599716"/>
+          <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[getGpGenerator]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="index" mc="Parameter" uid="137bc8f6-8c93-408f-9117-053b25794378"/>
+                <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[index]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="78c71bd5-f77c-482f-bec1-ab6c4ede4dff"/>
+                <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="e0015479-3137-430b-bb3b-510850734ddc"/>
+                <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Element gGp = g.duplicate();
+for (int i = 1; i <= primeCount; i++) {
+    if (i != index)
+        gGp.pow(p[i]);
+}
+]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="13e0986f-135b-4e09-9e9a-e5f12cd4e142"/>
+                <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return gGp;]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -204,6 +368,13 @@ this.bitsize = bitsize;
                 <ATTRIBUTES>
                   <ATT name="Content"><![CDATA[PairingParametersGenerator<?> parametersGenerator = new TypeA1CurveGenerator(primeCount, bitsize);
 PairingParameters parameters = parametersGenerator.generate();
+Pairing pairing = new TypeA1Pairing(random, parameters);
+g = getG1Generator();
+for (int i = 0; i < primeCount; i++)
+    p[i + 1] = parameters.getBigInteger("n" + i);
+
+for (int i = 1; i <= primeCount; i++)
+    gGp[i] = getGpGenerator(i);
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
@@ -219,7 +390,105 @@ PairingParameters parameters = parametersGenerator.generate();
                 <ID name="" mc="Note" uid="263c4486-da72-4941-9dd7-e9cefcb5d6e9"/>
                 <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[return new TypeA1Pairing(random, parameters);]]></ATT>
+                  <ATT name="Content"><![CDATA[return pairing;]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="newRandomGpElement" mc="Operation" uid="30d22d2c-1067-4233-a950-5ba925914999"/>
+          <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[newRandomGpElement]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="index" mc="Parameter" uid="ea61978f-6971-4086-b761-e94276c51c18"/>
+                <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[index]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="integer" mc="DataType" uid="00000004-0000-0009-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="6272ff1e-6d4c-4e2d-9c61-6ec908c6c636"/>
+                <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="3f458dee-fe38-4a88-8b90-755008d9509c"/>
+                <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Element e = gGp[index].duplicate();]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="cf41c4d0-b671-4b63-9d03-6a69b1b8cb01"/>
+                <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return e;]]></ATT>
                   <ATT name="MimeType"></ATT>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -235,31 +504,6 @@ PairingParameters parameters = parametersGenerator.generate();
         </OBJECT>
       </COMP>
       <COMP relation="OwnedAttribute">
-        <OBJECT>
-          <ID name="primeCount" mc="Attribute" uid="9150e9a7-dd9e-4740-bf36-bfe90a257e38"/>
-          <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
-          <ATTRIBUTES>
-            <ATT name="TypeConstraint"></ATT>
-            <ATT name="Value"></ATT>
-            <ATT name="TargetIsClass">false</ATT>
-            <ATT name="Changeable">AccesNone</ATT>
-            <ATT name="IsDerived">false</ATT>
-            <ATT name="IsOrdered">false</ATT>
-            <ATT name="IsUnique">false</ATT>
-            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
-            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
-            <ATT name="Visibility">Protected</ATT>
-            <ATT name="IsClass">false</ATT>
-            <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"><![CDATA[primeCount]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <LINK relation="Type">
-              <FOREIGNID name="integer" mc="DataType" uid="00000004-0000-0009-0000-000000000000"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
         <OBJECT>
           <ID name="bitsize" mc="Attribute" uid="587b8391-7a60-4d68-b113-e9680f66c33e"/>
           <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
@@ -283,6 +527,57 @@ PairingParameters parameters = parametersGenerator.generate();
             <LINK relation="Type">
               <FOREIGNID name="integer" mc="DataType" uid="00000004-0000-0009-0000-000000000000"/>
             </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="gGp" mc="Attribute" uid="cb5cc463-8bd9-431f-a021-347529f9d21b"/>
+          <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[null]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[gGp]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="TaggedValue" uid="8d1222b0-c3ab-45e8-831b-a7432ec6d4fa"/>
+                <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="TagParameter" uid="ca8d119c-4126-42e0-80e4-ea1d6df0e7b8"/>
+                      <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[Array]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3765-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
@@ -334,6 +629,31 @@ PairingParameters parameters = parametersGenerator.generate();
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="primeCount" mc="Attribute" uid="9150e9a7-dd9e-4740-bf36-bfe90a257e38"/>
+          <PID name="CompositeOrderPairingIBEScheme" mc="Class" uid="50a5afb3-e6c3-438e-a47f-0a17ea50facc"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[primeCount]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <FOREIGNID name="integer" mc="DataType" uid="00000004-0000-0009-0000-000000000000"/>
+            </LINK>
           </DEPENDENCIES>
         </OBJECT>
       </COMP>
