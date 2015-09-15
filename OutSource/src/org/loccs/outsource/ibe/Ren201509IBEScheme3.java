@@ -188,7 +188,7 @@ public class Ren201509IBEScheme3 extends CompositeOrderPairingIBEScheme {
 //begin of modifiable zone................T/0122f8bd-88d0-4984-b9ca-ea3f80f2fd98
         Ren201509IBEScheme3 outsource = new Ren201509IBEScheme3(512);
         
-        outsource.setRepeat(1);
+        outsource.setRepeat(10);
         
         //outsource.direct();
         

@@ -156,7 +156,7 @@ super(bitsize);
 //begin of modifiable zone................T/49f3fe9c-d0a3-4a46-864d-856804d02dcd
         Ren201509IBEScheme2 outsource = new Ren201509IBEScheme2(512);
         
-        outsource.setRepeat(1);
+        outsource.setRepeat(10);
         
         //outsource.direct();
         

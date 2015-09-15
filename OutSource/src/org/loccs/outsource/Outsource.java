@@ -10,9 +10,9 @@ import java.util.Vector;
 public abstract class Outsource {
     protected List<String> entityName = new Vector<String> ();
 
-    protected int repeat = 1;
-
     protected String nextStep = "";
+
+    protected int repeat = 1;
 
     private Map<String, EntityRuntime> entityRuntime = new Hashtable<String, EntityRuntime> ();
 
@@ -27,25 +27,19 @@ public abstract class Outsource {
 //end of modifiable zone(JavaCode)........E/a484ad5f-5452-4c82-b329-d521ba0da984
     }
 
-    public void setRepeat(int value) {
-//begin of modifiable zone................T/d2e80da4-5dbb-4610-8399-1357dcb945a6
-        // Automatically generated method. Please delete this comment before entering specific code.
-        this.repeat = value;
-//end of modifiable zone..................E/d2e80da4-5dbb-4610-8399-1357dcb945a6
-    }
-
     public void direct() {
 //begin of modifiable zone................T/4c2d19da-f4e6-40f7-bbcf-c14bc0f21c11
-        initialize();
-        
-        randomInput();
-        
-        long start = System.nanoTime();
-        for (int i = 1; i < repeat; i++)
+        long total = 0;
+        for (int i = 1; i < repeat; i++) {
+            initialize();
+            randomInput();
+            
+            long start = System.nanoTime();
             compute();
-        long end = System.nanoTime();
-        
-        System.out.println("Direct computer time: " + (end - start) / 1000000 + "ms.");
+            long end = System.nanoTime();
+            total += (end - start);
+        }
+         System.out.println("Direct computer time: " + total / 1000000 + "ms.");
 //end of modifiable zone..................E/4c2d19da-f4e6-40f7-bbcf-c14bc0f21c11
     }
 
@@ -57,30 +51,23 @@ public abstract class Outsource {
         for (int i = 0; i < entityName.size(); i++)
             addEntity(entityName.get(i));
         
-        initialize();
-        
-        randomInput();
-        
-        compute();
+        for (int i = 1; i < repeat; i++) {
+             initialize();
+             randomInput();
+             compute();
              
-        boolean finish = false;
-        while (!finish) {
-            long start = System.nanoTime();
-            
-            StepInformation information = step();
-            
-            if (information.isRepeat()) {
-            	for (int i = 1; i < repeat; i++)
-            		information = step();
-            }
-            
-            long end = System.nanoTime();
-            
-            EntityRuntime runtime = entityRuntime.get(information.getName());
-            runtime.increateRuntime(end - start);
-            
-            nextStep = information.getNext();
-            finish = information.isFinish();
+             boolean finish = false;
+             while (!finish) {
+                 long start = System.nanoTime();
+                 StepInformation information = step();
+                 long end = System.nanoTime();
+                 
+                 EntityRuntime runtime = entityRuntime.get(information.getName());
+                 runtime.increateRuntime(end - start);  
+                 
+                 nextStep = information.getNext();
+                 finish = information.isFinish();
+             }
         }
         
         for (int i = 0; i < entityName.size(); i++) {
@@ -90,19 +77,26 @@ public abstract class Outsource {
 //end of modifiable zone..................E/bcec36bc-3f10-41f9-a122-f9ad15f7e68f
     }
 
+    public void setRepeat(int value) {
+//begin of modifiable zone................T/d2e80da4-5dbb-4610-8399-1357dcb945a6
+        // Automatically generated method. Please delete this comment before entering specific code.
+        this.repeat = value;
+//end of modifiable zone..................E/d2e80da4-5dbb-4610-8399-1357dcb945a6
+    }
+
     protected void addEntity(String name) {
 //begin of modifiable zone................T/8132b083-ecf5-4a94-888e-946b50704956
         entityRuntime.put(name, new EntityRuntime(name));
 //end of modifiable zone..................E/8132b083-ecf5-4a94-888e-946b50704956
     }
 
+    protected abstract void compute();
+
     protected abstract List<String> getAllEntityNames();
 
     protected abstract void initialize();
 
     protected abstract void randomInput();
-
-    protected abstract StepInformation step();
 
     protected BigInteger randomNumber(BigInteger bound) {
 //begin of modifiable zone................T/70161a10-418d-44e5-a4c1-98379e1808a5
@@ -114,6 +108,6 @@ public abstract class Outsource {
 //end of modifiable zone..................E/86122423-4a92-4f86-85a7-d3443fae5b3e
     }
 
-    protected abstract void compute();
+    protected abstract StepInformation step();
 
 }
