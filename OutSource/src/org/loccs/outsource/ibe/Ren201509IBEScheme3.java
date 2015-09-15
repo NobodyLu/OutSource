@@ -20,6 +20,8 @@ public class Ren201509IBEScheme3 extends CompositeOrderPairingIBEScheme {
 
     protected BigInteger Ti;
 
+    protected BigInteger Ti1;
+
     protected BigInteger[] alpha = new BigInteger[3];
 
     protected Element e_g1_g1_alpha;
@@ -32,13 +34,16 @@ public class Ren201509IBEScheme3 extends CompositeOrderPairingIBEScheme {
 
     protected BigInteger rTi;
 
+    protected BigInteger rTi1;
+
     protected BigInteger s;
 
     protected Element[] u = new Element[3];
 
     public Ren201509IBEScheme3(int bitsize) {
 //begin of modifiable zone................T/70bb637d-cd0e-4e64-9963-645f4428693a
-    	super(3, bitsize);
+super(3, bitsize);
+
 //end of modifiable zone..................E/70bb637d-cd0e-4e64-9963-645f4428693a
 //begin of modifiable zone................T/5288f45f-32a5-463c-a62d-976f4639367e
         
@@ -143,23 +148,23 @@ public class Ren201509IBEScheme3 extends CompositeOrderPairingIBEScheme {
     }
 
     protected void keyupdate() {
-//begin of modifiable zone................T/c6c2f250-e942-4b1f-8a24-63510008f9bd
-        Ti = Ti.add(BigInteger.ONE);
-        rTi = randomNumber(order);
+//begin of modifiable zone................T/81a54aca-6683-4a5f-9525-d73666528bc9
+        Ti1 = Ti.add(BigInteger.ONE);
+        rTi1 = randomNumber(order);
         
         KTi[1] = g1.duplicate();
-        KTi[1].pow(rTi);
+        KTi[1].pow(rTi1);
         KTi[1].mul(R[2][1]);
         
         KTi[2] = g1.duplicate();
         KTi[2].pow(alpha[2]);
         Element t1 = u[2].duplicate();
-        t1.pow(Hash(ID, Ti));
+        t1.pow(Hash(ID, Ti1));
         t1.mul(h[2]);
-        t1.pow(rTi);
+        t1.pow(rTi1);
         KTi[2].mul(t1);
         KTi[2].mul(R[2][2]);
-//end of modifiable zone..................E/c6c2f250-e942-4b1f-8a24-63510008f9bd
+//end of modifiable zone..................E/81a54aca-6683-4a5f-9525-d73666528bc9
     }
 
     protected void setupAfterPairingInitialized() {

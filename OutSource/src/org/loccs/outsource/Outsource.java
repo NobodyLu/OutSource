@@ -30,7 +30,7 @@ public abstract class Outsource {
     public void direct() {
 //begin of modifiable zone................T/4c2d19da-f4e6-40f7-bbcf-c14bc0f21c11
         long total = 0;
-        for (int i = 1; i < repeat; i++) {
+        for (int i = 0; i < repeat; i++) {
             initialize();
             randomInput();
             
@@ -51,7 +51,7 @@ public abstract class Outsource {
         for (int i = 0; i < entityName.size(); i++)
             addEntity(entityName.get(i));
         
-        for (int i = 1; i < repeat; i++) {
+        for (int i = 0; i < repeat; i++) {
              initialize();
              randomInput();
              compute();
