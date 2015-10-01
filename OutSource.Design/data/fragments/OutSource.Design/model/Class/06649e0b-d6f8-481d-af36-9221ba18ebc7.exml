@@ -12,6 +12,7 @@
     <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
     <FOREIGNID name="JavaSuper" mc="NoteType" uid="003800a8-0000-018f-0000-000000000000"/>
     <FOREIGNID name="create" mc="Stereotype" uid="00700680-0000-0204-0000-000000000000"/>
+    <FOREIGNID name="description" mc="NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
     <FOREIGNID name="integer" mc="DataType" uid="00000004-0000-0009-0000-000000000000"/>
     <FOREIGNID name="string" mc="DataType" uid="00000004-0000-000d-0000-000000000000"/>
     <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3765-0000-000000000000"/>
@@ -222,6 +223,7 @@ g = getG1Generator();
 order = pairing.getG1().getOrder();
 setupAfterPairingInitialized();
 
+ID = randomNumber(order);
 keygen();
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
@@ -333,6 +335,7 @@ keygen();
 OK[1] = alpha[2].subtract(a);
 OK[1] = OK[1].mod(order);
 
+rand();
 OK[2] = rTi1.subtract(a);
 OK[2] = OK[2].mod(order);
 OK[3] = Hash(ID, Ti1);
@@ -408,6 +411,27 @@ OK[3] = OK[3].mod(order);
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="06211d36-349f-425d-ad74-1173385dd8e3"/>
+                <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[g_OK1[1] = g1.duplicate();
+g_OK1[1].pow(OK[1]);
+h2_OK2[1] = h[2].duplicate();
+h2_OK2[1].pow(OK[2]);
+u2_OK3[1] = u[2].duplicate();
+u2_OK3[1].pow(OK[3]);
+]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
@@ -463,6 +487,27 @@ OK[3] = OK[3].mod(order);
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="e65aca33-79c1-407c-ab9d-289e4391e393"/>
+                <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[g_OK1[2] = g1.duplicate();
+g_OK1[2].pow(OK[1]);
+h2_OK2[2] = h[2].duplicate();
+h2_OK2[2].pow(OK[2]);
+u2_OK3[2] = u[2].duplicate();
+u2_OK3[2].pow(OK[3]);
+]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -524,6 +569,31 @@ OK[3] = OK[3].mod(order);
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="91c502bb-4127-4231-b838-68dba85004cc"/>
+                <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[kTi_prime[2] = g_OK1[1].duplicate();
+kTi_prime[2].mul(h2_OK2[1]);
+kTi_prime[2].mul(u2_OK3[1]);
+kTi_prime[2].mul(R[2][2]);
+
+kTi_prime[1] = g_rTi1.duplicate();
+kTi_prime[1].mul(R[2][1]);
+
+if (!KTi[1].equals(kTi_prime[1]) || !KTi[2].equals(kTi_prime[2]))
+    System.out.println("outsource incorrect.");
+]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
             </COMP>
           </DEPENDENCIES>
         </OBJECT>
@@ -571,9 +641,7 @@ OK[3] = OK[3].mod(order);
                 <ID name="" mc="Note" uid="808acc2e-df00-47a9-a604-ba2f90c74b48"/>
                 <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
                 <ATTRIBUTES>
-                  <ATT name="Content"><![CDATA[Ti1 = Ti.add(BigInteger.ONE);
-rTi1 = randomNumber(order);
-g_rTi1 = g1.duplicate();
+                  <ATT name="Content"><![CDATA[g_rTi1 = g1.duplicate();
 g_rTi1.pow(rTi1);
 ]]></ATT>
                   <ATT name="MimeType"></ATT>
@@ -598,6 +666,198 @@ g_rTi1.pow(rTi1);
                 <DEPENDENCIES>
                   <LINK relation="Model">
                     <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="step" mc="Operation" uid="49921091-3de7-4551-a2c2-c014be7cc416"/>
+          <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[step]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Return">
+              <OBJECT>
+                <ID name="" mc="Parameter" uid="3ea4a585-f065-47bc-a10f-7f116406f9ed"/>
+                <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">false</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <ID name="StepInformation" mc="Class" uid="05eec002-0a88-4155-9fad-e440b9d55174"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="7bdffe7b-7649-4e6a-8331-400dc6165ff1"/>
+                <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[if (nextStep.equals(""))
+    return PKGQuery();
+
+if (nextStep.equals("U1Compute"))
+    return U1Compute();  
+
+if (nextStep.equals("U2Compute"))
+    return U2Compute(); 
+
+if (nextStep.equals("PKGQuery"))
+    return PKGQuery();
+]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="" mc="Note" uid="6ae19461-e796-4eb1-9588-409c21826d2a"/>
+                <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[return new StepInformation("TP", "", true, false);]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaReturned" mc="NoteType" uid="003800a8-0000-0190-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="main" mc="Operation" uid="83e47153-e9d0-4b53-a8ba-afbdeea357ea"/>
+          <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+          <ATTRIBUTES>
+            <ATT name="Concurrency">false</ATT>
+            <ATT name="Final">false</ATT>
+            <ATT name="Passing">MethodOut</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[main]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="IO">
+              <OBJECT>
+                <ID name="args" mc="Parameter" uid="36eeb2cb-0cb4-49a9-b856-7a2242fe67d4"/>
+                <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                <ATTRIBUTES>
+                  <ATT name="ParameterPassing">In</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+                  <ATT name="TypeConstraint"></ATT>
+                  <ATT name="DefaultValue"></ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="IsException">true</ATT>
+                  <ATT name="IsStream">false</ATT>
+                  <ATT name="Effect">ReadEffect</ATT>
+                  <ATT name="Name"><![CDATA[args]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Type">
+                    <FOREIGNID name="string" mc="DataType" uid="00000004-0000-000d-0000-000000000000"/>
+                  </LINK>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="TaggedValue" uid="25476ee4-1b7a-427f-b607-b2efe98941fb"/>
+                      <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <COMP relation="Actual">
+                          <OBJECT>
+                            <ID name="" mc="TagParameter" uid="98f0a803-f239-4835-9625-b4afc600056d"/>
+                            <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                            <ATTRIBUTES>
+                              <ATT name="Value"><![CDATA[Array]]></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES></DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3767-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <COMP relation="Descriptor">
+                    <OBJECT>
+                      <ID name="" mc="Note" uid="cb7f9cd2-6583-49ce-b0a3-fa1e0e1fdc69"/>
+                      <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                      <ATTRIBUTES>
+                        <ATT name="Content"></ATT>
+                        <ATT name="MimeType"></ATT>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <LINK relation="Model">
+                          <FOREIGNID name="description" mc="NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Descriptor">
+              <OBJECT>
+                <ID name="" mc="Note" uid="739217e3-c24e-42a9-9188-c8e85eacdd4b"/>
+                <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                <ATTRIBUTES>
+                  <ATT name="Content"><![CDATA[Ren201509IBEScheme3 outsource = new Ren201509IBEScheme3(512);
+
+outsource.setRepeat(10);
+
+//outsource.direct();
+
+outsource.evaluate();
+]]></ATT>
+                  <ATT name="MimeType"></ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Model">
+                    <FOREIGNID name="JavaCode" mc="NoteType" uid="003800a8-0000-018e-0000-000000000000"/>
                   </LINK>
                 </DEPENDENCIES>
               </OBJECT>
@@ -742,6 +1002,159 @@ g_rTi1.pow(rTi1);
                   <COMP relation="Actual">
                     <OBJECT>
                       <ID name="" mc="TagParameter" uid="8bd74487-7f6e-4f6f-8bb8-be493e84bc78"/>
+                      <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[Array]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3765-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="h2_OK2" mc="Attribute" uid="c47f3c56-d996-456a-82a2-54116824f74b"/>
+          <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[new Element[3]]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[h2_OK2]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="TaggedValue" uid="88137bb6-3ad4-4619-85c6-4f09236afab9"/>
+                <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="TagParameter" uid="fffb2a96-c1a8-47b0-aaa4-927980db2cbf"/>
+                      <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[Array]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3765-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="u2_OK3" mc="Attribute" uid="57e57c4c-7294-4b35-b8fd-80407415226c"/>
+          <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[new Element[3]]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[u2_OK3]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="TaggedValue" uid="dda44cfd-22e3-4f61-b10b-c80bfcacb84e"/>
+                <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="TagParameter" uid="f6b235fe-ee21-471e-a0fb-99d4fe4c1095"/>
+                      <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                      <ATTRIBUTES>
+                        <ATT name="Value"><![CDATA[Array]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="type" mc="TagType" uid="00000000-0000-3765-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="kTi_prime" mc="Attribute" uid="19e3c16c-9a0d-4054-a1fa-85cc87be4d29"/>
+          <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+          <ATTRIBUTES>
+            <ATT name="TypeConstraint"></ATT>
+            <ATT name="Value"><![CDATA[new Element[3]]]></ATT>
+            <ATT name="TargetIsClass">false</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[kTi_prime]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Type">
+              <ID name="Element" mc="Interface" uid="0d3f5abc-27d3-4035-ab29-c71b76bc1fdb"/>
+            </LINK>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="TaggedValue" uid="06921ea7-f40b-4fa3-91ae-429341032a70"/>
+                <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Actual">
+                    <OBJECT>
+                      <ID name="" mc="TagParameter" uid="f3bd34eb-f7c0-4aef-a37a-1962d9119354"/>
                       <PID name="Ren201509IBEScheme3Outsource" mc="Class" uid="06649e0b-d6f8-481d-af36-9221ba18ebc7"/>
                       <ATTRIBUTES>
                         <ATT name="Value"><![CDATA[Array]]></ATT>

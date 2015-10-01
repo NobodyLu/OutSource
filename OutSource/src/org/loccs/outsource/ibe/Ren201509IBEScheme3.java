@@ -152,6 +152,9 @@ super(3, bitsize);
         Ti1 = Ti.add(BigInteger.ONE);
         rTi1 = randomNumber(order);
         
+        R[2][1] = newRandomGpElement(3);
+        R[2][2] = newRandomGpElement(3);        
+        
         KTi[1] = g1.duplicate();
         KTi[1].pow(rTi1);
         KTi[1].mul(R[2][1]);

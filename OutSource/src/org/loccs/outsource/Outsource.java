@@ -72,7 +72,7 @@ public abstract class Outsource {
         
         for (int i = 0; i < entityName.size(); i++) {
             EntityRuntime runtime = entityRuntime.get(entityName.get(i));
-            System.out.println(entityName.get(i) + ": " + (runtime.getRuntime() / 1000000) + " ms.");
+            System.out.println(entityName.get(i) + ": " + (runtime.getRuntime() / repeat / 1000000) + " ms.");
         }
 //end of modifiable zone..................E/bcec36bc-3f10-41f9-a122-f9ad15f7e68f
     }
