@@ -20,6 +20,8 @@ public class Ren201509IBEScheme3Outsource extends Ren201509IBEScheme3 {
     protected Element[] u2_OK3 = new Element[3];
 
     protected Element[] kTi_prime = new Element[3];
+    
+    protected Element g_u2_h2_a;
 
     public Ren201509IBEScheme3Outsource(int bitsize) {
 //begin of modifiable zone................T/ccb7b546-543d-49ca-9c97-dbb0b39cca46
@@ -67,8 +69,11 @@ super(bitsize);
         a = randomNumber(order);
         OK[1] = alpha[2].subtract(a);
         OK[1] = OK[1].mod(order);
+        g_u2_h2_a = g1.duplicate();
+        g_u2_h2_a = g_u2_h2_a.mul(u[2]);
+        g_u2_h2_a = g_u2_h2_a.mul(h[2]);
+        g_u2_h2_a = g_u2_h2_a.pow(a);
         
-        rand();
         OK[2] = rTi1.subtract(a);
         OK[2] = OK[2].mod(order);
         OK[3] = Hash(ID, Ti1);
@@ -114,7 +119,8 @@ super(bitsize);
         kTi_prime[2] = g_OK1[1].duplicate();
         kTi_prime[2].mul(h2_OK2[1]);
         kTi_prime[2].mul(u2_OK3[1]);
-        kTi_prime[2].mul(R[2][2]);
+        kTi_prime[2].mul(g_u2_h2_a);
+        kTi_prime[2].mul(R[2][2]);    
         
         kTi_prime[1] = g_rTi1.duplicate();
         kTi_prime[1].mul(R[2][1]);
@@ -140,6 +146,9 @@ super(bitsize);
     protected StepInformation step() {
 //begin of modifiable zone................T/7bdffe7b-7649-4e6a-8331-400dc6165ff1
         if (nextStep.equals(""))
+        	return rand();
+        	
+        if (nextStep.equals("PKGQuery"))
             return PKGQuery();
         
         if (nextStep.equals("U1Compute"))
@@ -148,8 +157,10 @@ super(bitsize);
         if (nextStep.equals("U2Compute"))
             return U2Compute(); 
         
-        if (nextStep.equals("PKGQuery"))
-            return PKGQuery();
+        if (nextStep.equals("PKGVerify"))
+            return PKGVerify();
+        
+        
 //end of modifiable zone..................E/7bdffe7b-7649-4e6a-8331-400dc6165ff1
 //begin of modifiable zone................T/6ae19461-e796-4eb1-9588-409c21826d2a
         return new StepInformation("TP", "", true, false);
@@ -163,7 +174,7 @@ super(bitsize);
 //begin of modifiable zone................T/739217e3-c24e-42a9-9188-c8e85eacdd4b
     	Ren201509IBEScheme3Outsource outsource = new Ren201509IBEScheme3Outsource(512);
         
-        outsource.setRepeat(10);
+        outsource.setRepeat(1);
         
         //outsource.direct();
         
